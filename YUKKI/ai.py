@@ -1,5 +1,5 @@
-# this api belongs to nep coders of @DEVSNP
 import requests
+from MukeshAPI import api as MAPI
 
 class Ai:
     def __init__(self):
@@ -7,8 +7,9 @@ class Ai:
 
     def chatgpt(self, query):
         response = requests.get(
-            f"https://chatgpt.apinepdev.workers.dev/?question={query}"
+         f"https://chatgpt.apinepdev.workers.dev/?question={query}"
         )
+        # this api belongs to nep coders of @DEVSNP
         if response.status_code == 200:
             result = response.json()["answer"]
             return {"results":result,"join": "@ZeroXCoderZChat", "success": True}
@@ -16,3 +17,15 @@ class Ai:
     def imagine(self, query):
         result = f"https://aiimage.hellonepdevs.workers.dev/?prompt={query}"
         return result
+
+
+class Mukesh:
+    def __init__(self):
+        pass
+
+    def gemini(self, query):
+        a = api.gemini(query)
+        results = a['results']
+        return {"results":results,"join": "@ZeroXCoderZChat", "success": True}
+
+        
