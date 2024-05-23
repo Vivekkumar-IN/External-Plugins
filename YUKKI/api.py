@@ -1,3 +1,4 @@
+from random_word import RandomWords
 import requests
 import json
 
@@ -12,5 +13,11 @@ class api:
         quote = b['content']
         author = b['author']
         return {"quote": quote,"author": author, "join": "@ZeroXCoderZChat"}
+ 
+    def randomword(self):
+        r = RandomWords()
+        result = r.get_random_word()
+        return {"word": result,"join": "@ZeroXCoderZChat"}
+
         
         
