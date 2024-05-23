@@ -6,5 +6,6 @@ setup(
     install_requires=[
         'google_play_scraper',
         'requests',
+        'json',
     ],
 )
