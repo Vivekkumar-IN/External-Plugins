@@ -10,5 +10,6 @@ class api:
         b = a.json()
         quote = b['content']
         author = b['author']
+        return {"quote":quote,"author": author, "join": "@ZeroXCoderZChat"}
         
         
