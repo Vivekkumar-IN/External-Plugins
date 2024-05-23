@@ -1,2 +1,2 @@
-from .app import App
-from .ai import Ai
+from .app import *
+from .ai import *
