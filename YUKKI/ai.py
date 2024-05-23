@@ -24,7 +24,7 @@ class Mukesh:
         pass
 
     def gemini(self, query):
-        a = api.gemini(query)
+        a = MAPI.gemini(query)
         results = a['results']
         return {"results":results,"join": "@ZeroXCoderZChat", "success": True}
 
