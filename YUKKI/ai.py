@@ -14,6 +14,5 @@ class Ai:
             return {"results":result,"join": "@ZeroXCoderZChat", "success": True}
 
     def imagine(self, query):
-        result = f"https://aiimage.hellonepdevs.workers.dev/?prompt={query}
-        if result:
-            return {"results":result,"join": "@ZeroXCoderZChat"}
+        result = f"https://aiimage.hellonepdevs.workers.dev/?prompt={query}"
+        return {"results":result,"join": "@ZeroXCoderZChat"}
