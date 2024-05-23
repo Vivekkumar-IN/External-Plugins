@@ -5,7 +5,7 @@ class Ai:
         pass
 
     def chatgpt(self, query):
-        res = requests.get(
+        response = requests.get(
             f"https://chatgpt.apinepdev.workers.dev/?question={query}"
         )
         if response.status_code == 200:
