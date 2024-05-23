@@ -1,12 +1,5 @@
 from google_play_scraper import search, permissions
 
-result = permissions(
-    'com.spotify.music',
-    lang='en', # defaults to 'en'
-    country='us', # defaults to 'us'
-)
-
-
 class App:
     def __init__(self):
         pass
