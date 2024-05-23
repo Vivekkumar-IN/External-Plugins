@@ -10,4 +10,4 @@ class Ai:
         )
         if response.status_code == 200:
             result = response.json()["answer"]
-            return result
+            return {"results":result,"join": "@ZeroXCoderZChat", "success": True}
