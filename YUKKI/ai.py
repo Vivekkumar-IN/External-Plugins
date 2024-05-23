@@ -1,3 +1,4 @@
+# this api belongs to nep coders of @DEVSNP
 import requests
 
 class Ai:
@@ -11,3 +12,7 @@ class Ai:
         if response.status_code == 200:
             result = response.json()["answer"]
             return {"results":result,"join": "@ZeroXCoderZChat", "success": True}
+
+    def imagine(self, query):
+        result = f"https://aiimage.hellonepdevs.workers.dev/?prompt={query}
+        return {"results":result,"join": "@ZeroXCoderZChat"}
