@@ -1,4 +1,11 @@
-from google_play_scraper import search
+from google_play_scraper import search, permissions
+
+result = permissions(
+    'com.spotify.music',
+    lang='en', # defaults to 'en'
+    country='us', # defaults to 'us'
+)
+
 
 class App:
     def __init__(self):
@@ -12,4 +19,11 @@ class App:
             n_hits=n_hits
         )
         return result
-      
+    
+    def permissions(self, query, lang='en', country='us'):
+        result = permissions(
+            query,
+            lang=lang,
+            country=country,
+        )
+        return result
