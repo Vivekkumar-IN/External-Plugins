@@ -19,6 +19,7 @@ class Ai:
         return result
 
 
+# i stored this apis or function from MukeshApi libraray and its develeoper is @Itz_legendCoder
 class Mukesh:
     def __init__(self):
         pass
