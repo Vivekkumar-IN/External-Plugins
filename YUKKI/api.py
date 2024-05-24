@@ -46,6 +46,6 @@ class api:
     def translate(self, query: str, lang):
         translator = Translator()
         results = translator.translate(query, dest=lang)
-        return {"query": query, "translation": results,"join": "@ZeroXCoderZChat"}
+        return results
         
         
