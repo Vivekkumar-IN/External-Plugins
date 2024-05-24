@@ -6,11 +6,13 @@
 
 
 ###ChatGptApi
-```from YUKKI import Ai
+```
+from YUKKI import Ai
 
 ai = Ai()
 
 results= ai.chatgpt("hello ai")
 
-print(results)```
+print(results)
+```
 
