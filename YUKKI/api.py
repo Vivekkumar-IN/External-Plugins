@@ -25,7 +25,7 @@ class api:
         result = r.get_random_word()
         return {"word": result,"join": "@ZeroXCoderZChat"}
 
-    def translate(self, query: str, lang)
+    def translate(self, query: str, lang):
         translator = Translator()
         results = translator.translate(query, dest=lang)
         return {"query": query, "translation": results,"join": "@ZeroXCoderZChat"}
