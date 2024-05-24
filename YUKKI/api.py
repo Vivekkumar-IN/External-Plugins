@@ -94,7 +94,7 @@ class api:
 
         with aiohttp.ClientSession() as session:
             with session.post(url, json={"code": code}) as resp:
-                image = BytesIO(await resp.read())
+                image = BytesIO(resp.read())
         a = self.randomword()
         image.name = f"{a}.png"
         if os.path.exists(image):
