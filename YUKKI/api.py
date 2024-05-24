@@ -18,12 +18,14 @@ class api:
         b = a.json()
         quote = b['content']
         author = b['author']
-        return {"quote": quote,"author": author, "join": "@ZeroXCoderZChat"}
+        quotehindi = self.translate(quote, "hi")
+        return {"quote": quote,"hindi": quotehindi, "author": author, "join": "@ZeroXCoderZChat"}
  
     def randomword(self):
         r = RandomWords()
         result = r.get_random_word()
-        return {"word": result,"join": "@ZeroXCoderZChat"}
+        hindi = self.translate(result, "hi")
+        return {"word": result,"hindi": hindi, "join": "@ZeroXCoderZChat"}
 
     def translate(self, query: str, lang):
         translator = Translator()
