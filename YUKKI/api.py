@@ -1,6 +1,12 @@
 from random_word import RandomWords
 import requests
 import json
+from googletrans import Translator
+
+
+translated_text = translator.translate('Hello, world!', dest='es')
+
+
 
 class api:
     def __init__(self):
@@ -19,5 +25,9 @@ class api:
         result = r.get_random_word()
         return {"word": result,"join": "@ZeroXCoderZChat"}
 
+    def translate(self, query: str, lang)
+        translator = Translator()
+        results = translator.translate(query, dest=lang)
+        return {"query": query, "translation": results,"join": "@ZeroXCoderZChat"}
         
         
