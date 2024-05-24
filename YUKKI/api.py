@@ -19,6 +19,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.'''
+
 from random_word import RandomWords
 import requests
 import json
@@ -77,7 +78,7 @@ class api:
         for line in umm:
             draw.text((x, y), line, fill=(1, 22, 55), font=font)
             y = y + linespacing
-        file = f"write_{text}.jpg"
+        file = f"write_.jpg"
         img.save(file)
         if os.path.exists(file):
             upload_path = upload_file(file)
