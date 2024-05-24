@@ -5,8 +5,8 @@
  - `git+https://github.com/Vivekkumar-IN/External-Plugins@main`
 
 
-###ChatGptApi
-```
+###ChatGpt
+```python
 from YUKKI import Ai
 
 ai = Ai()
@@ -15,4 +15,9 @@ results= ai.chatgpt("hello ai")
 
 print(results)
 ```
+Result of print(result):
 
+```python
+
+{'results': 'Hello! How can I assist you today?', 'join': '@ZeroXCoderZChat', 'success': True}
+```
