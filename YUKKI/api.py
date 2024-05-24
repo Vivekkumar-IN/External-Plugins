@@ -44,7 +44,7 @@ class api:
     def randomword(self):
         r = RandomWords()
         result = r.get_random_word()
-        return {"word": result, "join": "@ZeroXCoderZChat"}
+        return result
 
 
     def write(self, text):
@@ -78,7 +78,8 @@ class api:
         for line in umm:
             draw.text((x, y), line, fill=(1, 22, 55), font=font)
             y = y + linespacing
-        file = f"write_.jpg"
+        a = self.randomword()
+        file = f"write_{a}.jpg"
         img.save(file)
         if os.path.exists(file):
             upload_path = upload_file(file)
