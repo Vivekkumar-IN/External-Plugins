@@ -22,7 +22,11 @@ SOFTWARE.'''
 from random_word import RandomWords
 import requests
 import json
-from googletrans import Translator
+import os
+from PIL import Image, ImageDraw, ImageFont
+from io import BytesIO
+from telegraph import upload_file
+
 
 class api:
     def __init__(self):
@@ -35,17 +39,50 @@ class api:
         quote = b['content']
         author = b['author']
         quotehindi = self.translate(quote, "hi")
-        return {"quote": quote,"hindi": quotehindi, "author": author, "join": "@ZeroXCoderZChat"}
+        return {"quote": quote, "author": author, "join": "@ZeroXCoderZChat"}
  
     def randomword(self):
         r = RandomWords()
         result = r.get_random_word()
-        hindi = self.translate(result, "hi")
-        return {"word": result,"hindi": hindi, "join": "@ZeroXCoderZChat"}
+        return {"word": result, "join": "@ZeroXCoderZChat"}
 
-    def translate(self, query: str, lang):
-        translator = Translator()
-        results = translator.translate(query, dest=lang)
-        return results
+
+    def write(self, text):
+        tryimg = "https://graph.org/file/1f8d00177ac2429b101b9.jpg"
+        tryresp = requests.get(tryimg)
+        img = Image.open(BytesIO(tryresp.content))
+        draw = ImageDraw.Draw(img)
+        font_url = "https://github.com/google/fonts/raw/main/ofl/poetsenone/PoetsenOne-Regular.ttf"
+        font_response = requests.get(font_url)
+        font = ImageFont.truetype(BytesIO(font_response.content), 24)
+
+        x, y = 150, 140
+        lines = []
+        if len(text) <= 55:
+            lines.append(text)
+        else:
+            all_lines = text.split("\n")
+            for line in all_lines:
+                if len(line) <= 55:
+                    lines.append(line)
+                else:
+                    k = len(line) // 55
+                    lines.extend(line[((z - 1) * 55) : (z * 55)] for z in range(1, k + 2))
+    
+    
+    
+        umm = lines[:25]
         
+        line_height = font.getbbox("hg")[3]
+        linespacing = 41
+        for line in umm:
+            draw.text((x, y), line, fill=(1, 22, 55), font=font)
+            y = y + linespacing
+        file = f"write_{message.from_user.id}.jpg"
+        img.save(file)
+        if os.path.exists(file):
+            upload_path = upload_file(file)
+            url = f"https://telegra.ph{upload_path[0]}"
+            os.remove(file)
+            return url
         
