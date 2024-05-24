@@ -47,3 +47,22 @@ Result of print(results):
 
 ```
 
+### Write
+```python
+from YUKKI import api
+
+Api = api()
+
+text = "Jai shree Ram"
+
+results= Api.write(text)
+
+print(results)
+
+```
+
+Result of print(results):
+
+```python
+https://telegra.ph/file/63ff2e31cae67d511cfae.jpg
+```
