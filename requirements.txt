@@ -2,4 +2,5 @@ google_play_scraper
 requests
 MukeshAPI
 Random-Word
-googletrans==4.0.0-rc1
+pillow==9.5.0
+telegraph
