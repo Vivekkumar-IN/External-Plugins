@@ -66,3 +66,9 @@ Result of print(results):
 ```python
 https://telegra.ph/file/63ff2e31cae67d511cfae.jpg
 ```
+
+
+
+
+
+This Project is Licensed under [License](https://github.com/Vivekkumar-IN/External-Plugins/blob/main/LICENSE)
