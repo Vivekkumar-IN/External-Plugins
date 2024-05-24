@@ -3,11 +3,6 @@ import requests
 import json
 from googletrans import Translator
 
-
-translated_text = translator.translate('Hello, world!', dest='es')
-
-
-
 class api:
     def __init__(self):
         pass
