@@ -17,9 +17,33 @@ results= ai.chatgpt("hello ai")
 
 print(results)
 ```
-Result of print(result):
+Result of print(results):
 
 ```python
 
 {'results': 'Hello! How can I assist you today?', 'join': '@ZeroXCoderZChat', 'success': True}
 ```
+
+
+### Random quote
+
+```python
+from YUKKI import api
+
+Api = api()
+
+results= Api.quote()
+
+print(results)
+
+```
+
+Result of print(results):
+
+```python
+
+
+{'quote': 'The truest greatness lies in being kind, the truest wisdom in a happy mind.', 'author': 'Ella Wheeler Wilcox', 'join': '@ZeroXCoderZChat'}
+
+```
+
