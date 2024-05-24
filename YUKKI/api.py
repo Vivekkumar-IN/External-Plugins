@@ -86,20 +86,22 @@ class api:
             url = f"https://telegra.ph{upload_path[0]}"
             os.remove(file)
             return url
-        
-
 
     def carbon(self, code):
         url = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x63\x61\x72\x62\x6f\x6e\x61\x72\x61\x2e\x73\x6f\x6c\x6f\x70\x6f\x76\x2e\x64\x65\x76\x2f\x61\x70\x69\x2f\x63\x6f\x6f\x6b"
 
-        with aiohttp.ClientSession() as session:
-            with session.post(url, json={"code": code}) as resp:
-                image = BytesIO(resp.read())
+        response = requests.post(url, json={"code": code})
+        image = BytesIO(response.content)
+    
         a = self.randomword()
         image.name = f"{a}.png"
-        if os.path.exists(image):
-            upload_path = upload_file(image)
+
+        with open(image.name, 'wb') as f:
+            f.write(image.getbuffer())
+
+        if os.path.exists(image.name):
+            upload_path = upload_file(image.name)
             url = f"https://telegra.ph{upload_path[0]}"
-            os.remove(image)
+            os.remove(image.name)
             return url
 
