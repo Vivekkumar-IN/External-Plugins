@@ -93,8 +93,8 @@ class api:
         url = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x63\x61\x72\x62\x6f\x6e\x61\x72\x61\x2e\x73\x6f\x6c\x6f\x70\x6f\x76\x2e\x64\x65\x76\x2f\x61\x70\x69\x2f\x63\x6f\x6f\x6b"
 
         with aiohttp.ClientSession() as session:
-        with session.post(url, json={"code": code}) as resp:
-            image = BytesIO(await resp.read())
+            with session.post(url, json={"code": code}) as resp:
+                image = BytesIO(await resp.read())
         a = self.randomword()
         image.name = f"{a}.png"
         if os.path.exists(image):
