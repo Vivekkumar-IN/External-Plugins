@@ -38,7 +38,6 @@ class api:
         b = a.json()
         quote = b['content']
         author = b['author']
-        quotehindi = self.translate(quote, "hi")
         return {"quote": quote, "author": author, "join": "@ZeroXCoderZChat"}
  
     def randomword(self):
