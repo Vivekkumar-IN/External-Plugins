@@ -25,13 +25,13 @@ from google_play_scraper import search, permissions
 
 class App:
 
-```
+'''
 This project includes code from the google_play_scraper library, which is licensed under the MIT License.
 
 MIT License
 Copyright (c) 2019 PlanB
 
-```
+'''
 
     def __init__(self):
         pass
