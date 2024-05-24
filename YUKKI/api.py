@@ -78,7 +78,7 @@ class api:
         for line in umm:
             draw.text((x, y), line, fill=(1, 22, 55), font=font)
             y = y + linespacing
-        file = f"write_{message.from_user.id}.jpg"
+        file = f"write_{text}.jpg"
         img.save(file)
         if os.path.exists(file):
             upload_path = upload_file(file)
