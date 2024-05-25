@@ -73,7 +73,8 @@ https://telegra.ph/file/63ff2e31cae67d511cfae.jpg
 
 ##### This project includes code from the [python273's telegraph](https://github.com/python273/telegraph) library, which is licensed under the MIT License.
 
-##### MIT License\nCopyright (c) 2018 python273
+##### [MIT License](https://github.com/python273/telegraph/blob/master/LICENSE)
+##### [Copyright (c) 2018 python273](https://github.com/python273/telegraph/blob/master/LICENSE)
 
 
 ```python
