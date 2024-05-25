@@ -1,7 +1,6 @@
 aiohttp
 google_play_scraper
 requests
-MukeshAPI
 Random-Word
 pillow==9.5.0
 telegraph
