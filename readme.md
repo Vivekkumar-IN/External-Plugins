@@ -71,10 +71,10 @@ https://telegra.ph/file/63ff2e31cae67d511cfae.jpg
 
 ## Telegraph text
 
-### This project includes code from the python273's telegraph library, which is licensed under the MIT License.
+##### This project includes code from the python273's telegraph library, which is licensed under the MIT License.
 
-### MIT License
-### Copyright (c) 2018 python273
+##### MIT License
+##### Copyright (c) 2018 python273
 
 
 ```python
