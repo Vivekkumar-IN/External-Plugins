@@ -1,4 +1,3 @@
-aiohttp
 google_play_scraper
 requests
 Random-Word
