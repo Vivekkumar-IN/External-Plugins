@@ -20,14 +20,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.'''
 
-from random_word import RandomWords
-import requests
-import json
 import os
-from PIL import Image, ImageDraw, ImageFont
+import json
+import requests
 from io import BytesIO
-from telegraph import upload_file
-import aiohttp
+from random_word import RandomWords
+from PIL import Image, ImageDraw, ImageFont
+from telegraph import upload_file, Telegraph
+
+telegraph = Telegraph()
+telegraph.create_account(short_name='RAM SIYA RAM')
 
 class api:
     def __init__(self):
@@ -126,3 +128,11 @@ class api:
 
         os.remove(image_path)
         return f"https://telegra.ph{uploaded_file[0]}"
+
+    def telegraph(self, title, query):
+        response = telegraph.create_page(
+        title,
+        html_content=query
+        )
+        url = response['url']
+        return {"results":url,"join": "@ZeroXCoderZChat", "success": True}
