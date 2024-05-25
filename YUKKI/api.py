@@ -130,6 +130,13 @@ class api:
         return f"https://telegra.ph{uploaded_file[0]}"
 
     def telegraph(self, title, query):
+        '''
+        This project includes code from the python273's telegraph library, which is licensed under the MIT License.
+
+        MIT License
+        Copyright (c) 2018 python273
+
+        '''
         response = telegraph.create_page(
         title,
         html_content=query
