@@ -125,4 +125,4 @@ class api:
         uploaded_file = upload_file(image_path)
 
         os.remove(image_path)
-        return url = f"https://telegra.ph{uploaded_file[0]}"
+        return f"https://telegra.ph{uploaded_file[0]}"
