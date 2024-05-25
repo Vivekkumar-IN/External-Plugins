@@ -9,11 +9,11 @@
 
 
 ```python
-from YUKKI import Ai
+from YUKKI import api
 
-ai = Ai()
+Api = api()
 
-results= ai.chatgpt("hello ai")
+results= Api.chatgpt("hello ai")
 
 print(results)
 ```
