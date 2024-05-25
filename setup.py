@@ -6,7 +6,7 @@ def read_requirements():
 
 setup(
     name='External-Plugins',
-    version='0.1.0',
+    version='0.25',
     packages=find_packages(),
     install_requires=read_requirements(),
 )
