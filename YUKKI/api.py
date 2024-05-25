@@ -105,3 +105,24 @@ class api:
             os.remove(image.name)
             return url
 
+    def chatgpt(self, query):
+        response = requests.get(
+         f"https://chatgpt.apinepdev.workers.dev/?question={query}"
+        )
+        # this api belongs to nep coders of @DEVSNP
+        if response.status_code == 200:
+            result = response.json()["answer"]
+            return {"results":result,"join": "@ZeroXCoderZChat", "success": True}
+
+    def imagine(self, query):
+        image_url = f"https://aiimage.hellonepdevs.workers.dev/?prompt={query}"
+        response = requests.get(image_url)
+        a = self.randomword()
+        image_path = f"temp{a}_image.jpg"
+        with open(image_path, "wb") as file:
+            file.write(response.content)
+
+        uploaded_file = upload_file(image_path)
+
+        os.remove(image_path)
+        return url = f"https://telegra.ph{uploaded_file[0]}"
