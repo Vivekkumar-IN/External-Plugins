@@ -69,6 +69,31 @@ https://telegra.ph/file/63ff2e31cae67d511cfae.jpg
 ```
 
 
+## Telegraph text
+
+### This project includes code from the python273's telegraph library, which is licensed under the MIT License.
+
+### MIT License
+### Copyright (c) 2018 python273
+
+
+```python
+from YUKKI import api
+Api = api()
+title = "A Title for telegraph page"
+query = "tect that you want to upload to telegraph"
+results= Api.telegraph(title,query)
+
+print(results)
+
+```
+Result of print(results):
+
+```python
+
+{'results': 'https://telegra.ph/A-Title-for-telegraph-page-05-25', 'join': '@ZeroXCoderZChat', 'success': True}
+
+```
 
 
 
