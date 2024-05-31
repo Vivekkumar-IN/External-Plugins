@@ -81,7 +81,7 @@ https://telegra.ph/file/63ff2e31cae67d511cfae.jpg
 from YUKKI import api
 Api = api()
 title = "A Title for telegraph page"
-query = "tect that you want to upload to telegraph"
+query = "text that you want to upload to telegraph"
 results= Api.telegraph(title,query)
 
 print(results)
