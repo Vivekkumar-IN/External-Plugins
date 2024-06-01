@@ -41,7 +41,7 @@ class Myapi:
         b = a.json()
         quote = b['content']
         author = b['author']
-        return {"quote": quote, "author": author, "join": "@ZeroXCoderZChat"}
+        return {"quote": quote, "author": author, "join": "@vk_zone"}
  
     def randomword(self):
         r = RandomWords()
@@ -114,7 +114,7 @@ class Myapi:
         # this api belongs to nep coders of @DEVSNP
         if response.status_code == 200:
             result = response.json()["answer"]
-            return {"results":result,"join": "@ZeroXCoderZChat", "success": True}
+            return {"results":result,"join": "@vk_zone", "success": True}
 
     def imagine(self, query):
         image_url = f"https://aiimage.hellonepdevs.workers.dev/?prompt={query}"
@@ -142,13 +142,13 @@ class Myapi:
         html_content=query
         )
         url = response['url']
-        return {"results":url,"join": "@ZeroXCoderZChat", "success": True}
+        return {"results":url,"join": "@vk_zone", "success": True}
 
 
     def advice(self):
         response = requests.get("https://api.safone.dev/advice")
         result = response.json()["advice"]
-        return {"results":result,"join": "@ZeroXCoderZChat", "success": True}
+        return {"results":result,"join": "@vk_zone", "success": True}
 
 
     def get_jokes(self, amount=1):
