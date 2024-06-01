@@ -1,11 +1,14 @@
 ## This is for my personal use i am trying to store some useful library here
 
 
-##### you can install this project by
-#####  
+<details>
+  <summary>Installation</summary>
+
 ```sh
 pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 ```
+</details>
+
 
 <details>
   <summary>ChatGpt</summary>
