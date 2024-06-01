@@ -5,8 +5,8 @@ def read_requirements():
         return f.read().splitlines()
 
 setup(
-    name='External-Plugins',
-    version='0.31',
+    name='TheApi',
+    version='0.7',
     packages=find_packages(),
     install_requires=read_requirements(),
 )
