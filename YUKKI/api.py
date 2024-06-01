@@ -156,7 +156,7 @@ class Myapi:
             raise InvalidAmountError(amount)
         type = "Programming" if aboutProgramming else "Any"
         amo = f"&amount={amount}" if amount > 1 else ""
-        api_url = f"https://v2.jokeapi.dev/joke/{type}?type=single{amount}"
+        api_url = f"https://v2.jokeapi.dev/joke/{type}?type=onepart{amount}"
         response = requests.get(api_url)
         data = response.json()
         return data
