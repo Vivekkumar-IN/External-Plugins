@@ -168,7 +168,7 @@ raise InvalidAmountError(amount)
 </details>
 
 <details>
-<summary>Hindi Jokes</summary>
+ <summary>Hindi Jokes</summary>
   ```python
   from TheApi import api
 
