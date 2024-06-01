@@ -148,7 +148,7 @@ class api:
     def advice(self):
         response = requests.get("https://api.safone.dev/advice")
         result = response.json()["advice"]
-            return {"results":result,"join": "@ZeroXCoderZChat", "success": True}
+        return {"results":result,"join": "@ZeroXCoderZChat", "success": True}
 
 
     def get_random_joke(self, amount=1, aboutProgramming=False):
