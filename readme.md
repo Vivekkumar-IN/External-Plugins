@@ -156,8 +156,7 @@ if isinstance(jokes, dict):
 else:
     print(jokes["joke"])
 
-# in this api.get_jokes(13)
-the jokes is greater then 10 so the an exception returns 
+# in this api.get_jokes(13) the jokes is greater then 10 so the an exception returns 
 
 
 raise InvalidAmountError(amount)
