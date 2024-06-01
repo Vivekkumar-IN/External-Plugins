@@ -1,4 +1,4 @@
-> [!WARNING]
+> [!NOTE]
 > This is for my personal use i am trying to store some useful library here
 
 
