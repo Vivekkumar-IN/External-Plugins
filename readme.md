@@ -164,6 +164,19 @@ YUKKI.errors.InvalidAmountError: Invalid amount of jokes requested: 11. Maximum 
 
 ```
 
+### Hindi Jokes
+```python
+from TheApi import api
+
+joke = api.get_hindi_jokes()
+
+print(joke)
+```
+results of print:
+```python
+
+हमारे समाज में रीति रिवाज और प्रथाएं इतनी महान है कि एक निकम्मा पुरुष भी विवाह के बाद परमेश्वर बन जाता है 😆🤣😋😉
+```
 
 
 This Project is Licensed under [License](https://github.com/Vivekkumar-IN/External-Plugins/blob/main/LICENSE)
