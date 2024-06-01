@@ -28,7 +28,7 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 </details>
 
 <details>
-<summary>Random quote</summary> 
+  <summary>Random quote</summary> 
 
   ```python
   from TheApi import api
@@ -50,7 +50,7 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 </details>
 
 <details>
-<summary> Write </summary> 
+  <summary> Write </summary> 
   ```python
 
   from TheApi import api
