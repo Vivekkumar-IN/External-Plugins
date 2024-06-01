@@ -112,6 +112,7 @@ if isinstance(jokes, dict):
 
 else:
     print(jokes["joke"])
+```
 
 ```python
 
