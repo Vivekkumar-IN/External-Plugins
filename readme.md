@@ -60,13 +60,12 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
   results= api.write(text)
 
   print(results)
-
   ```
 
   Result of print(results):
 
   ```python
-https://telegra.ph/file/63ff2e31cae67d511cfae.jpg
+  https://telegra.ph/file/63ff2e31cae67d511cfae.jpg
   ```
 </details>
 
