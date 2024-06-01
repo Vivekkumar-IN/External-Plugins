@@ -67,12 +67,6 @@ https://telegra.ph/file/63ff2e31cae67d511cfae.jpg
 
 ### Telegraph text
 
-#### This project includes code from the [python273's telegraph](https://github.com/python273/telegraph) library, which is licensed under the MIT License.
-
-#### [MIT License](https://github.com/python273/telegraph/blob/master/LICENSE)
-##### [Copyright (c) 2018 python273](https://github.com/python273/telegraph/blob/master/LICENSE)
-
-
 ```python
 from TheApi import api
 title = "A Title for telegraph page"
