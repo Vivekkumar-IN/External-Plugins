@@ -8,7 +8,7 @@ pip install git+https://github.com/Vivekkumar-IN/External-Plugins@main
 ```
 
 
-### ChatGpt
+## ChatGpt
 
 
 ```python
@@ -26,7 +26,7 @@ Result of print(results):
 ```
 
 
-### Random quote
+## Random quote
 
 ```python
 from YUKKI import api
@@ -46,7 +46,7 @@ Result of print(results):
 
 ```
 
-### Write
+## Write
 ```python
 from YUKKI import api
 
@@ -67,10 +67,10 @@ https://telegra.ph/file/63ff2e31cae67d511cfae.jpg
 
 ## Telegraph text
 
-##### This project includes code from the [python273's telegraph](https://github.com/python273/telegraph) library, which is licensed under the MIT License.
+### This project includes code from the [python273's telegraph](https://github.com/python273/telegraph) library, which is licensed under the MIT License.
 
-##### [MIT License](https://github.com/python273/telegraph/blob/master/LICENSE)
-##### [Copyright (c) 2018 python273](https://github.com/python273/telegraph/blob/master/LICENSE)
+## [MIT License](https://github.com/python273/telegraph/blob/master/LICENSE)
+### [Copyright (c) 2018 python273](https://github.com/python273/telegraph/blob/master/LICENSE)
 
 
 ```python
