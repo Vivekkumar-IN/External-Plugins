@@ -27,26 +27,27 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
   ```
 </details>
 
+<details>
+<summary>Random quote</summary> 
 
-### Random quote
+  ```python
+  from TheApi import api
 
-```python
-from TheApi import api
+  results= api.quote()
 
-results= api.quote()
+  print(results)
 
-print(results)
+  ```
 
-```
+  Result of print(results):
 
-Result of print(results):
-
-```python
+  ```python
 
 
-{'quote': 'The truest greatness lies in being kind, the truest wisdom in a happy mind.', 'author': 'Ella Wheeler Wilcox', 'join': '@vk_zone'}
+  {'quote': 'The truest greatness lies in being kind, the truest wisdom in a happy mind.', 'author': 'Ella Wheeler Wilcox', 'join': '@vk_zone'}
 
-```
+  ```
+</details>
 
 ### Write
 ```python
