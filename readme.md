@@ -124,14 +124,41 @@ results of print
 ```python
 
 response = api.get_jokes()
-#This will return 1 Jokes
+# This will return 1 Jokes
 
 response = api.get_jokes(2)
-#This will return 1 Jokes
+# This will return 1 Jokes
 
-#like this you can get 10 Jokes
+# like this you can get 10 Jokes
 
-#if the number is greater then 10 in cause an exception returns 
+# if the number is greater then 10 in cause an exception returns 
+
+# Example : 
+
+import json
+from YUKKI import api
+
+response = api.get_jokes(13)
+
+data = json.loads(response)
+
+jokes = data["jokes"]
+num = 1
+Jokes = ""
+if isinstance(jokes, dict):
+    
+    for key in jokes:
+        a = jokes[key]
+        Jokes+=(f"{num}. {a}\n\n")
+        num+=1
+    print(Jokes)
+
+else:
+    print(jokes["joke"])
+
+# in this api.get_jokes(13)
+the jokes is greater then 10 so the an exception returns 
+
 
 raise InvalidAmountError(amount)
 YUKKI.errors.InvalidAmountError: Invalid amount of jokes requested: 11. Maximum allowed is 10. Minimum allowed is 1.
