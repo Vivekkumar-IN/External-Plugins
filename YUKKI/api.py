@@ -156,13 +156,13 @@ class Myapi:
             raise InvalidAmountError(amount)
         response = requests.get(f"https://v2.jokeapi.dev/joke/Any?type=single&amount={amount}")
         jokes_data = response.json()
-    
+      
         if amount == 1:
-            jokes_list = [jokes_data['joke']]
+            jokes = {"jokes": {"joke": jokes_data['joke']}}
         else:
-            jokes_list = [joke['joke'] for joke in jokes_data['jokes']]
+            jokes = {"jokes": {f"joke{i+1}": joke['joke'] for i, joke in enumerate(jokes_data['jokes'])}}
     
-        return json.dumps(jokes_list)
+        return json.dumps(jokes)
 
 
 
