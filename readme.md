@@ -95,6 +95,8 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 
 <details>
 <summary>Jokes</summary>
+
+
   ```python
   import json
   from TheApi import api
