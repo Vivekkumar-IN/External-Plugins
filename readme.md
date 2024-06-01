@@ -166,7 +166,7 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 
 
 raise InvalidAmountError(amount)
-  YUKKI.errors.InvalidAmountError:Invalid amount of jokes requested: 11. Maximum allowed is 10. Minimum allowed is 1.
+  TheApi.errors.InvalidAmountError:Invalid amount of jokes requested: 11. Maximum allowed is 10. Minimum allowed is 1.
 
   ```
 </details>
