@@ -22,23 +22,25 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 </details>
 
 
+<details>
+  <summary>### ChatGpt</summary>
 
-### ChatGpt
 
+  ```python
+  from TheApi import api
 
-```python
-from TheApi import api
+  results= api.chatgpt("hello ai")
 
-results= api.chatgpt("hello ai")
+  print(results)
 
-print(results)
-```
-Result of print(results):
+  ```
+  Result of print(results):
 
-```python
+  ```python
 
-{'results': 'Hello! How can I assist you today?', 'join': '@vk_zone', 'success': True}
-```
+  {'results': 'Hello! How can I assist you today?', 'join': '@vk_zone', 'success': True}
+  ```
+</details>
 
 
 ### Random quote
