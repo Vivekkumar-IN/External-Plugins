@@ -7,12 +7,21 @@
 pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 ```
 
-</details>
-
-Image with Text
-  <summary>Example of how to use</summary>
+### ChatGPT
 
 <details>
+  <summary>Example of how to use</summary>
+
+  ```python
+  # Example code for using ChatGPT
+  from theapi import ChatGPT
+  chatgpt = ChatGPT(api_key='your_api_key')
+  response = chatgpt.ask("Hello, how are you?")
+  print(response)
+</details>
+```
+
+
 ### ChatGpt
 
 
