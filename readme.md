@@ -18,8 +18,9 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
   chatgpt = ChatGPT(api_key='your_api_key')
   response = chatgpt.ask("Hello, how are you?")
   print(response)
+  ```
 </details>
-```
+
 
 
 ### ChatGpt
