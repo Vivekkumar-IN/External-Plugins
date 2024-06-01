@@ -31,7 +31,7 @@ from .errors import InvalidAmountError
 telegraph = Telegraph()
 telegraph.create_account(short_name='RAM SIYA RAM')
 
-class api:
+class Myapi:
     def __init__(self):
         pass
 
@@ -161,3 +161,6 @@ class api:
         data = response.json()
         return data
 
+
+
+api = Myapi()
