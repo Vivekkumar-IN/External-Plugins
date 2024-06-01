@@ -113,6 +113,14 @@ if isinstance(jokes, dict):
 else:
     print(jokes["joke"])
 ```
+results of print
+
+
+1. Two fish in a tank. One turns to the other and says, "Do you know how to drive this thing?"
+```
+
+```python
+
 response = api.get_jokes()
 #This will return 1 Jokes
 
@@ -125,6 +133,7 @@ response = api.get_jokes(2)
 
 raise InvalidAmountError(amount)
 YUKKI.errors.InvalidAmountError: Invalid amount of jokes requested: 11. Maximum allowed is 10. Minimum allowed is 1.
+
 ```
 
 
