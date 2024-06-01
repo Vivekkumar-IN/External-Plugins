@@ -10,10 +10,9 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 </details>
 
 Image with Text
-
-<details>
   <summary>Example of how to use</summary>
 
+<details>
 ### ChatGpt
 
 
