@@ -22,7 +22,7 @@ Result of print(results):
 
 ```python
 
-{'results': 'Hello! How can I assist you today?', 'join': '@ZeroXCoderZChat', 'success': True}
+{'results': 'Hello! How can I assist you today?', 'join': '@vk_zone', 'success': True}
 ```
 
 
@@ -42,7 +42,7 @@ Result of print(results):
 ```python
 
 
-{'quote': 'The truest greatness lies in being kind, the truest wisdom in a happy mind.', 'author': 'Ella Wheeler Wilcox', 'join': '@ZeroXCoderZChat'}
+{'quote': 'The truest greatness lies in being kind, the truest wisdom in a happy mind.', 'author': 'Ella Wheeler Wilcox', 'join': '@vk_zone'}
 
 ```
 
@@ -80,7 +80,7 @@ Result of print(results):
 
 ```python
 
-{'results': 'https://telegra.ph/A-Title-for-telegraph-page-05-25', 'join': '@ZeroXCoderZChat', 'success': True}
+{'results': 'https://telegra.ph/A-Title-for-telegraph-page-05-25', 'join': '@vk_zone', 'success': True}
 
 ```
 
