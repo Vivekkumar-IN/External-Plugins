@@ -154,10 +154,10 @@ class api:
     def get_random_joke(self, amount=1, aboutProgramming=False):
         if amount > 10 or amount < 1:
             raise InvalidAmountError(amount)
-    type = "Programming" if aboutProgramming else "Any"
-    amo = f"&amount={amount}" if amount > 1 else ""
-    api_url = f"https://v2.jokeapi.dev/joke/{type}?type=single{amount}"
-    response = requests.get(api_url)
-    data = response.json()
-    return data
+        type = "Programming" if aboutProgramming else "Any"
+        amo = f"&amount={amount}" if amount > 1 else ""
+        api_url = f"https://v2.jokeapi.dev/joke/{type}?type=single{amount}"
+        response = requests.get(api_url)
+        data = response.json()
+        return data
 
