@@ -143,3 +143,10 @@ class api:
         )
         url = response['url']
         return {"results":url,"join": "@ZeroXCoderZChat", "success": True}
+
+
+    def advice(self):
+        response = requests.get("https://api.safone.dev/advice")
+        result = response.json()["advice"]
+            return {"results":result,"join": "@ZeroXCoderZChat", "success": True}
+
