@@ -49,131 +49,139 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
   ```
 </details>
 
-### Write
-```python
-from TheApi import api
+<details>
+<summary>Write</summary> 
+  ```python
+  from TheApi import api
 
-text = "Jai shree Ram"
+  text = "Jai shree Ram"
 
-results= api.write(text)
+  results= api.write(text)
 
-print(results)
+  print(results)
 
-```
+  ```
 
-Result of print(results):
+  Result of print(results):
 
-```python
+  ```python
 https://telegra.ph/file/63ff2e31cae67d511cfae.jpg
-```
+  ```
+</details>
 
 
-### Telegraph text
+<details>
+<summary>Telegraph Text</summary>
 
-```python
-from TheApi import api
-title = "A Title for telegraph page"
-query = "text that you want to upload to telegraph"
-results= api.telegraph(title,query)
+  ```python
+  from TheApi import api
+  title = "A Title for telegraph page"
+  query = "text that you want to upload to telegraph"
+  results= api.telegraph(title,query)
 
-print(results)
+  print(results)
 
-```
-Result of print(results):
+  ```
+  Result of print(results):
 
-```python
+  ```python
 
-{'results': 'https://telegra.ph/A-Title-for-telegraph-page-05-25', 'join': '@vk_zone', 'success': True}
+  {'results': 'https://telegra.ph/A-Title-for-telegraph-page-05-25', 'join': '@vk_zone', 'success': True}
 
-```
+   ```
+</details>
 
-### Jokes
-```python
-import json
-from TheApi import api
+<details>
+<summary>Jokes</summary>
+  ```python
+  import json
+  from TheApi import api
 
-response = api.get_jokes()
+  response = api.get_jokes()
 
-data = json.loads(response)
+  data = json.loads(response)
 
-jokes = data["jokes"]
-num = 1
-Jokes = ""
-if isinstance(jokes, dict):
+  jokes = data["jokes"]
+  num = 1
+  Jokes = ""
+  if isinstance(jokes, dict):
     
-    for key in jokes:
-        a = jokes[key]
-        Jokes+=(f"{num}. {a}\n\n")
-        num+=1
-    print(Jokes)
+      for key in jokes:
+          a = jokes[key]
+          Jokes+=(f"{num}. {a}\n\n")
+          num+=1
+      print(Jokes)
 
-else:
-    print(jokes["joke"])
-```
+  else:
+      print(jokes["joke"])
+  ```
 
-results of print
-```python
+  results of print
+  ```python
 
-1. Two fish in a tank. One turns to the other and says, "Do you know how to drive this thing?"
+  1. Two fish in a tank. One turns to the other and says, "Do you know how to drive this thing?"
 
-```
+  ```
 
-```python
+  ```python
 
-response = api.get_jokes()
-# This will return 1 Jokes
+  response = api.get_jokes()
+  # This will return 1 Jokes
 
-response = api.get_jokes(2)
-# This will return 1 Jokes
+  response = api.get_jokes(2)
+  # This will return 1 Jokes
 
-# like this you can get 10 Jokes
+  # like this you can get 10 Jokes
 
-# if the number is greater then 10 in cause an exception returns 
+  # if the number is greater then 10 in cause an exception returns 
 
-# Example : 
+  # Example : 
 
-import json
-from TheApi import api
+  import json
+  from TheApi import api
 
-response = api.get_jokes(13)
+  response = api.get_jokes(13)
 
-data = json.loads(response)
+  data = json.loads(response)
 
-jokes = data["jokes"]
-num = 1
-Jokes = ""
-if isinstance(jokes, dict):
+  jokes = data["jokes"]
+  num = 1
+  Jokes = ""
+  if isinstance(jokes, dict):
     
-    for key in jokes:
-        a = jokes[key]
-        Jokes+=(f"{num}. {a}\n\n")
-        num+=1
-    print(Jokes)
+      for key in jokes:
+          a = jokes[key]
+          Jokes+=(f"{num}. {a}\n\n")
+          num+=1
+      print(Jokes)
 
-else:
-    print(jokes["joke"])
+  else:
+      print(jokes["joke"])
 
-# in this api.get_jokes(13) the jokes is greater then 10 so the an exception returns 
+  # in this api.get_jokes(13) the jokes is greater then 10 so the an exception returns 
 
 
 raise InvalidAmountError(amount)
-YUKKI.errors.InvalidAmountError: Invalid amount of jokes requested: 11. Maximum allowed is 10. Minimum allowed is 1.
+  YUKKI.errors.InvalidAmountError:Invalid amount of jokes requested: 11. Maximum allowed is 10. Minimum allowed is 1.
 
-```
+  ```
+</details>
 
-### Hindi Jokes
-```python
-from TheApi import api
+<details>
+<summary>Hindi Jokes</summary>
+  ```python
+  from TheApi import api
 
-joke = api.get_hindi_jokes()
+  joke = api.get_hindi_jokes()
 
-print(joke)
-```
-results of print:
-```python
+  print(joke)
+  ```
+  results of print:
+  ```python
 
-हमारे समाज में रीति रिवाज और प्रथाएं इतनी महान है कि एक निकम्मा पुरुष भी विवाह के बाद परमेश्वर बन जाता है 😆🤣😋😉
-```
+  हमारे समाज में रीति रिवाज और प्रथाएं इतनी महान है कि एक निकम्मा पुरुष भी विवाह के बाद परमेश्वर बन जाता है 😆🤣😋😉
+  ```
+</details>
 
 
 This Project is Licensed under [License](https://github.com/Vivekkumar-IN/External-Plugins/blob/main/LICENSE)
