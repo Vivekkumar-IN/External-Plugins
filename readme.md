@@ -8,7 +8,7 @@ pip install git+https://github.com/Vivekkumar-IN/External-Plugins@main
 ```
 
 
-#### ChatGpt
+### ChatGpt
 
 
 ```python
@@ -26,7 +26,7 @@ Result of print(results):
 ```
 
 
-#### Random quote
+### Random quote
 
 ```python
 from YUKKI import api
@@ -46,7 +46,7 @@ Result of print(results):
 
 ```
 
-#### Write
+### Write
 ```python
 from YUKKI import api
 
@@ -65,12 +65,12 @@ https://telegra.ph/file/63ff2e31cae67d511cfae.jpg
 ```
 
 
-#### Telegraph text
+### Telegraph text
 
-##### This project includes code from the [python273's telegraph](https://github.com/python273/telegraph) library, which is licensed under the MIT License.
+#### This project includes code from the [python273's telegraph](https://github.com/python273/telegraph) library, which is licensed under the MIT License.
 
-#### [MIT License](https://github.com/python273/telegraph/blob/master/LICENSE)
-##### [Copyright (c) 2018 python273](https://github.com/python273/telegraph/blob/master/LICENSE)
+### [MIT License](https://github.com/python273/telegraph/blob/master/LICENSE)
+#### [Copyright (c) 2018 python273](https://github.com/python273/telegraph/blob/master/LICENSE)
 
 
 ```python
@@ -88,6 +88,43 @@ Result of print(results):
 
 {'results': 'https://telegra.ph/A-Title-for-telegraph-page-05-25', 'join': '@ZeroXCoderZChat', 'success': True}
 
+```
+
+### Jokes
+```python
+import json
+from YUKKI import api
+
+response = api.get_jokes()
+
+data = json.loads(response)
+
+jokes = data["jokes"]
+num = 1
+Jokes = ""
+if isinstance(jokes, dict):
+    
+    for key in jokes:
+        a = jokes[key]
+        Jokes+=(f"{num}. {a}\n\n")
+        num+=1
+    print(Jokes)
+
+else:
+    print(jokes["joke"])
+```
+response = api.get_jokes()
+#This will return 1 Jokes
+
+response = api.get_jokes(2)
+#This will return 1 Jokes
+
+#like this you can get 10 Jokes
+
+#if the number is greater then 10 in cause an exception returns 
+
+raise InvalidAmountError(amount)
+YUKKI.errors.InvalidAmountError: Invalid amount of jokes requested: 11. Maximum allowed is 10. Minimum allowed is 1.
 ```
 
 
