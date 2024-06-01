@@ -3,7 +3,8 @@
 
 ##### you can install this project by
 #####  
-` pip install git+https://github.com/Vivekkumar-IN/External-Plugins@main`
+```sh
+pip install git+https://github.com/Vivekkumar-IN/External-Plugins@main```
 
 
 ### ChatGpt
