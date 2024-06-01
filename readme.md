@@ -4,7 +4,7 @@
 ##### you can install this project by
 #####  
 ```sh
-pip install git+https://github.com/Vivekkumar-IN/External-Plugins@main
+pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 ```
 
 
@@ -12,7 +12,7 @@ pip install git+https://github.com/Vivekkumar-IN/External-Plugins@main
 
 
 ```python
-from YUKKI import api
+from TheApi import api
 
 results= api.chatgpt("hello ai")
 
@@ -29,7 +29,7 @@ Result of print(results):
 ### Random quote
 
 ```python
-from YUKKI import api
+from TheApi import api
 
 results= api.quote()
 
@@ -48,7 +48,7 @@ Result of print(results):
 
 ### Write
 ```python
-from YUKKI import api
+from TheApi import api
 
 text = "Jai shree Ram"
 
@@ -74,7 +74,7 @@ https://telegra.ph/file/63ff2e31cae67d511cfae.jpg
 
 
 ```python
-from YUKKI import api
+from TheApi import api
 title = "A Title for telegraph page"
 query = "text that you want to upload to telegraph"
 results= api.telegraph(title,query)
@@ -93,7 +93,7 @@ Result of print(results):
 ### Jokes
 ```python
 import json
-from YUKKI import api
+from TheApi import api
 
 response = api.get_jokes()
 
@@ -136,7 +136,7 @@ response = api.get_jokes(2)
 # Example : 
 
 import json
-from YUKKI import api
+from TheApi import api
 
 response = api.get_jokes(13)
 
