@@ -198,7 +198,7 @@ raise InvalidAmountError(amount)
 This Project is Licensed under [License](https://github.com/Vivekkumar-IN/External-Plugins/blob/main/LICENSE)
 
 
-```
+
 # Bihar TopoJSON Map
 
 This repository contains a TopoJSON file representing the state of Bihar in India.
@@ -207,7 +207,7 @@ This repository contains a TopoJSON file representing the state of Bihar in Indi
 
 To use this map in your project, you can simply download the `bihar.topojson` file and integrate it with your web application. You can then use libraries like D3.js to visualize and interact with the map data.
 
-```html
+html
 <!DOCTYPE html>
 <html>
 <head>
@@ -242,4 +242,3 @@ To use this map in your project, you can simply download the `bihar.topojson` fi
   </script>
 </body>
 </html>
-```
