@@ -12,9 +12,7 @@
 ```python
 from YUKKI import api
 
-Api = api()
-
-results= Api.chatgpt("hello ai")
+results= api.chatgpt("hello ai")
 
 print(results)
 ```
@@ -31,9 +29,7 @@ Result of print(results):
 ```python
 from YUKKI import api
 
-Api = api()
-
-results= Api.quote()
+results= api.quote()
 
 print(results)
 
@@ -52,11 +48,9 @@ Result of print(results):
 ```python
 from YUKKI import api
 
-Api = api()
-
 text = "Jai shree Ram"
 
-results= Api.write(text)
+results= api.write(text)
 
 print(results)
 
@@ -79,10 +73,9 @@ https://telegra.ph/file/63ff2e31cae67d511cfae.jpg
 
 ```python
 from YUKKI import api
-Api = api()
 title = "A Title for telegraph page"
 query = "text that you want to upload to telegraph"
-results= Api.telegraph(title,query)
+results= api.telegraph(title,query)
 
 print(results)
 
