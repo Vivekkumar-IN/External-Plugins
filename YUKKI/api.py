@@ -151,13 +151,18 @@ class Myapi:
         return {"results":result,"join": "@ZeroXCoderZChat", "success": True}
 
 
-    def get_random_joke(self, amount=1):
+    def get_jokes(self, amount=1):
         if amount > 10 or amount < 1:
             raise InvalidAmountError(amount)
-        api_url = f"https://v2.jokeapi.dev/joke/Any?type=onepart&amount={amount}"
-        response = requests.get(api_url)
-        data = response.json()
-        return data
+        response = requests.get(f"https://v2.jokeapi.dev/joke/Any?type=single&amount={amount}")
+        jokes_data = response.json()
+    
+        if amount == 1:
+            jokes_list = [jokes_data['joke']]
+        else:
+            jokes_list = [joke['joke'] for joke in jokes_data['jokes']]
+    
+        return json.dumps(jokes_list)
 
 
 
