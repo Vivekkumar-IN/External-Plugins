@@ -114,10 +114,8 @@ else:
     print(jokes["joke"])
 ```
 
-```python
-
 results of print
-
+```python
 
 1. Two fish in a tank. One turns to the other and says, "Do you know how to drive this thing?"
 
