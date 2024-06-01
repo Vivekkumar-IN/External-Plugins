@@ -51,6 +51,7 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 <details>
   <summary> Write </summary> 
   ```python
+
   from TheApi import api
 
   text = "Jai shree Ram"
@@ -58,7 +59,6 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
   results= api.write(text)
 
   print(results)
-
   ```
 
   Result of print(results):
