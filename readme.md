@@ -17,7 +17,6 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
   results= api.chatgpt("hello ai")
 
   print(results)
-
   ```
   Result of print(results):
 
