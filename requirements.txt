@@ -1,6 +1,4 @@
-google_play_scraper
 requests
 Random-Word
 pillow==9.5.0
 telegraph
-profanity
