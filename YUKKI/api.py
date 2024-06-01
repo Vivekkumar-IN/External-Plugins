@@ -27,7 +27,7 @@ from io import BytesIO
 from random_word import RandomWords
 from PIL import Image, ImageDraw, ImageFont
 from telegraph import upload_file, Telegraph
-
+from .errors import InvalidAmountError
 telegraph = Telegraph()
 telegraph.create_account(short_name='RAM SIYA RAM')
 
@@ -149,4 +149,15 @@ class api:
         response = requests.get("https://api.safone.dev/advice")
         result = response.json()["advice"]
             return {"results":result,"join": "@ZeroXCoderZChat", "success": True}
+
+
+    def get_random_joke(self, amount=1, aboutProgramming=False):
+        if amount > 10 or amount < 1:
+            raise InvalidAmountError(amount)
+    type = "Programming" if aboutProgramming else "Any"
+    amo = f"&amount={amount}" if amount > 1 else ""
+    api_url = f"https://v2.jokeapi.dev/joke/{type}?type=single{amount}"
+    response = requests.get(api_url)
+    data = response.json()
+    return data
 
