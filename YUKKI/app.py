@@ -23,7 +23,7 @@ SOFTWARE.'''
 
 from google_play_scraper import search, permissions
 
-class App:
+class APP:
 
     '''
     This project includes code from the google_play_scraper library, which is licensed under the MIT License.
@@ -52,3 +52,6 @@ class App:
             country=country,
         )
         return result
+
+
+App =APP()
