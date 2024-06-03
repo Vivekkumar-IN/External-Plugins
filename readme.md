@@ -206,6 +206,19 @@ raise InvalidAmountError(amount)
 
   print(image)```
 
+results of image
+```python
+
+{'photo': 'https://images.unsplash.com/photo-1708938828404-24834946b6bf?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=720&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTcxNzQxODAyOA&ixlib=rb-4.0.3&q=80&w=1280', 'join': '@TheTeamVivek', 'success': True}```
+
+```python
+image = api.gen_image()
+'here you can also use height and weight '
+height= 469
+width = 747
+image = api.gen_image(height, width)
+```
+
 </details>
 
 This Project is Licensed under [License](https://github.com/Vivekkumar-IN/External-Plugins/blob/main/LICENSE)
