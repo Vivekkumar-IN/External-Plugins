@@ -145,7 +145,7 @@ class Myapi:
         return {"results":url,"join": "@vk_zone", "success": True}
 
 
-    def advice(self):
+    def get_advice(self):
         try:
             results = requests.get("https://api.adviceslip.com/advice").json()['slip']['advice']
             return {"results":results,"join": "@TheTeamVivek", "success": True}
