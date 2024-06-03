@@ -10,6 +10,29 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 ```
 </details>
 
+<details>
+  <summary>Advice</summary>
+
+
+  ```python
+
+  from TheApi import api
+
+  advice = api.get_advice()
+  
+  print(advice)
+
+  ```
+
+  Result of print(advice):
+
+  ```python
+  
+{'results': 'If you are feeling down, try holding a pencil between your top lip and your nose for five minutes.', 'join': '@TheTeamVivek', 'success': True}
+
+  ```
+</details>
+
 
 <details>
   <summary>ChatGpt</summary>
