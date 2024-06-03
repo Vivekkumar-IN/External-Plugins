@@ -171,6 +171,13 @@ class Myapi:
             results = response['jokeContent']
             return results
 
+    def gen_image(self, width=1280, height=720):
+        url f= "https://random.imagecdn.app/v1/image?width={width}&height={height}&format=json"
+        response = requests.get(url)
+        data = response.json()
+        Z = data.get("url")
+        return {"photo": Z,"join": "@TheTeamVivek", "success": True}
+
 
 
 api = Myapi()
