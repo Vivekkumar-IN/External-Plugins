@@ -146,9 +146,11 @@ class Myapi:
 
 
     def advice(self):
-        response = requests.get("https://api.safone.dev/advice")
-        result = response.json()["advice"]
-        return {"results":result,"join": "@vk_zone", "success": True}
+        try:
+            results = requests.get("https://api.adviceslip.com/advice").json()['slip']['advice']
+            return {"results":results,"join": "@TheTeamVivek", "success": True}
+        except requests.exceptions.RequestException as e:
+            return e
 
 
     def get_jokes(self, amount=1):
