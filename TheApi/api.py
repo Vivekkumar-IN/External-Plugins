@@ -180,6 +180,10 @@ class Myapi:
         Z = data.get("url")
         return {"photo": Z,"join": "@TheTeamVivek", "success": True}
 
+    def get_uslessfact(self):
+        results = requests.get("https://uselessfacts.jsph.pl/api/v2/facts/random").json()['text']
+        return {"results": results,"join": "@TheTeamVivek", "success": True}
+
 
 
 api = Myapi()
