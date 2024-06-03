@@ -199,13 +199,9 @@ raise InvalidAmountError(amount)
   <summary>Generate Random Image</summary>
 
   ```python
-
   from TheApi import api
-
   image = api.gen_image()
-
-  print(image)
-```
+  print(image)```
 
   results of image
 
