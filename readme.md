@@ -203,18 +203,8 @@ raise InvalidAmountError(amount)
 
   image = api.gen_image()
 
-  print(image)
- 
-  
-  # Results```
+  print(image)```
 
 </details>
 
 This Project is Licensed under [License](https://github.com/Vivekkumar-IN/External-Plugins/blob/main/LICENSE)
-
-def gen_image(self, width=1280, height=720):
-        url f= "https://random.imagecdn.app/v1/image?width={width}&height={height}&format=json"
-        response = requests.get(url)
-        data = response.json()
-        Z = data.get("url")
-        return {"photo": Z,"join": "@TheTeamVivek", "success": True}
