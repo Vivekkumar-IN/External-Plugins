@@ -204,7 +204,8 @@ raise InvalidAmountError(amount)
 
   image = api.gen_image()
 
-  print(image)```
+  print(image)
+```
 
   results of image
 
@@ -218,9 +219,10 @@ Also you can use with height and width
   'here you can also use height and weight '
   width=1280
   height=720
-  image = api.gen_image(width, height)```
+  image = api.gen_image(width, height)
+```
 
 </details>
 
 
-This Project is Licensed under [License](https://github.com/Vivekkumar-IN/External-Plugins/blob/main/LICENSE)
+This Project is Licensed under [License](https://github.com/Vivekkumar-IN/TheApi)
