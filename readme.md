@@ -197,6 +197,7 @@ raise InvalidAmountError(amount)
 
 <details>
   <summary>Generate Random Image</summary>
+
   ```python
 
   from TheApi import api
