@@ -8,4 +8,4 @@
 
 ### Our Cool project 
 
-#### [YukkiMusic](https://github.com/Vivekkumar-IN/YukkiMusic) Modified and With many updates  You can Found Real [YukkiMusicBot](https://github.com/TeamYukki/YukkiMusicBot)
+#### [YukkiMusic](https://github.com/Vivekkumar-IN/YukkiMusic) Forked from [YukkiMusicBot](https://github.com/TeamYukki/YukkiMusicBot) with many major updates
