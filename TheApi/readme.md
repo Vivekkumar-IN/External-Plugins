@@ -2,6 +2,6 @@
 
 ### Serving telegram with our awesome codes and projects.
 
-- [Contact](tg://openmessage?user_id=6815918609)
+- [Contact](https://t.me/vivekkumar07089)
 - [Support Channel](https://t.me/TheTeamVivek)
 - [Support Group](https://t.me/TheTeamVk)
