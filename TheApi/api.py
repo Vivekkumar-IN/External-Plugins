@@ -172,15 +172,7 @@ class Myapi:
         if response['status']:    
             results = response['jokeContent']
             return results
-
-    def gen_image(self, width=1280, height=720):
-        url = f"https://random.imagecdn.app/v1/image?width={width}&height={height}&format=json"
-        response = requests.get(url)
-        data = response.json()
-        Z = data.get("url")
-        return {"photo": Z,"join": "@TheTeamVivek", "success": True}
-
-    def get_uselessfact(self):
+     def get_uselessfact(self):
         results = requests.get("https://uselessfacts.jsph.pl/api/v2/facts/random").json()['text']
         return {"results": results,"join": "@TheTeamVivek", "success": True}
 
