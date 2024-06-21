@@ -172,7 +172,7 @@ class Myapi:
         if response['status']:    
             results = response['jokeContent']
             return results
-     def get_uselessfact(self):
+    def get_uselessfact(self):
         results = requests.get("https://uselessfacts.jsph.pl/api/v2/facts/random").json()['text']
         return {"results": results,"join": "@TheTeamVivek", "success": True}
 
