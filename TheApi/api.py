@@ -24,6 +24,7 @@ import os
 import json
 import requests
 from io import BytesIO
+from bs4 import BeautifulSoup
 from random_word import RandomWords
 from PIL import Image, ImageDraw, ImageFont
 from telegraph import upload_file, Telegraph
@@ -175,6 +176,22 @@ class Myapi:
     def get_uselessfact(self):
         results = requests.get("https://uselessfacts.jsph.pl/api/v2/facts/random").json()['text']
         return {"results": results,"join": "@TheTeamVivek", "success": True}
+
+    def gen_hashtag(self, text):
+        url = "https://all-hashtag.com/library/contents/ajax_generator.php"
+
+        data = {
+            "keyword": text,
+            "filter": "top",
+        }
+        response = requests.post(url, data=data)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        hashtags_div = soup.find('div', id='copy-hashtags')
+        hashtags = hashtags_div.text.strip() if hashtags_div else ""
+        similar_hashtags_div = soup.find('div', id='copy-hashtags-similar')
+        similar_hashtags = similar_hashtags_div.text.strip() if similar_hashtags_div else ""
+        return f"Hashtags:\n{hashtags}\n\n Similar hashtags:\n{similar_hashtags}" 
+        
 
 
 
