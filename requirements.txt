@@ -1,4 +1,6 @@
 requests
+beautifulsoup4
 Random-Word
 pillow==9.5.0
 telegraph
+
