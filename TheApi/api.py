@@ -211,4 +211,46 @@ class Myapi:
         return text.replace('/', ' ')
 
 
+    def wikipedia(query):
+        search_url = "https://en.wikipedia.org/w/api.php"
+    
+        params = {
+            "action": "query",
+            "list": "search",
+            "srsearch": query,
+            "format": "json"
+        }
+    
+        response = requests.get(search_url, params=params)
+    
+        if response.status_code == 200:
+            data = response.json()
+            search_results = data.get("query", {}).get("search", [])
+        
+            if search_results:
+                top_result = search_results[0]
+                page_id = top_result["pageid"]
+                summary_url = f"https://en.wikipedia.org/w/api.php?action=query&prop=extracts|pageimages&exintro&explaintext&piprop=thumbnail&pithumbsize=500&format=json&pageids={page_id}"
+                summary_response = requests.get(summary_url)
+            
+                if summary_response.status_code == 200:
+                    summary_data = summary_response.json()
+                    pages = summary_data.get("query", {}).get("pages", {})
+                    page_info = pages.get(str(page_id), {})
+                    image_url = page_info.get("thumbnail", {}).get("source", "No image available")
+                
+                    return {
+                        "title": top_result["title"],
+                        "summary": page_info.get("extract", "No summary available."),
+                        "url": f"https://en.wikipedia.org/?curid={page_id}",
+                        "image_url": image_url
+                    }
+                else:
+                    return {"error": "Failed to fetch the page summary"}
+            else:
+                return {"error": "No search results found"}
+        else:
+            return {"error": "Failed to fetch search results"}
+
+
 api = Myapi()
