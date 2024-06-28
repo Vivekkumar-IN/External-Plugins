@@ -54,70 +54,23 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 </details>
 
 <details>
-  <summary>Random quote</summary> 
+  <summary>Hindi Joke </summary>
+
 
   ```python
   from TheApi import api
 
-  results= api.quote()
+  joke = api.get_hindi_jokes()
 
-  print(results)
+  print(joke)
 
   ```
-
-  Result of print(results):
+  Result of print(joke):
 
   ```python
 
-
-  {'quote': 'The truest greatness lies in being kind, the truest wisdom in a happy mind.', 'author': 'Ella Wheeler Wilcox', 'join': '@vk_zone'}
-
+  हमारे समाज में रीति रिवाज और प्रथाएं इतनी महान है कि एक निकम्मा पुरुष भी विवाह के बाद परमेश्वर बन जाता है 😆🤣😋😉
   ```
-</details>
-
-<details>
-  <summary>Write</summary>
-
-
-  ```python
-
-  from TheApi import api
-
-  text = "Jai shree Ram"
-
-  results= api.write(text)
-
-  print(results)
-  ```
-
-  Result of print(results):
-
-  ```python
-  https://telegra.ph/file/63ff2e31cae67d511cfae.jpg
-
-  ```
-</details>
-
-
-<details>
-<summary>Telegraph Text</summary>
-
-  ```python
-  from TheApi import api
-  title = "A Title for telegraph page"
-  query = "text that you want to upload to telegraph"
-  results= api.telegraph(title,query)
-
-  print(results)
-
-  ```
-  Result of print(results):
-
-  ```python
-
-  {'results': 'https://telegra.ph/A-Title-for-telegraph-page-05-25', 'join': '@vk_zone', 'success': True}
-
-   ```
 </details>
 
 <details>
@@ -197,27 +150,77 @@ raise InvalidAmountError(amount)
 
   ```
 </details>
+ 
+
 
 <details>
-  <summary>Hindi Joke </summary>
-
+  <summary>Random quote</summary> 
 
   ```python
   from TheApi import api
 
-  joke = api.get_hindi_jokes()
+  results= api.quote()
 
-  print(joke)
+  print(results)
 
   ```
-  Result of print(joke):
+
+  Result of print(results):
 
   ```python
 
-  हमारे समाज में रीति रिवाज और प्रथाएं इतनी महान है कि एक निकम्मा पुरुष भी विवाह के बाद परमेश्वर बन जाता है 😆🤣😋😉
+
+  {'quote': 'The truest greatness lies in being kind, the truest wisdom in a happy mind.', 'author': 'Ella Wheeler Wilcox', 'join': '@vk_zone'}
+
   ```
 </details>
 
- 
+
+
+
+<details>
+<summary>Telegraph Text</summary>
+
+  ```python
+  from TheApi import api
+  title = "A Title for telegraph page"
+  query = "text that you want to upload to telegraph"
+  results= api.telegraph(title,query)
+
+  print(results)
+
+  ```
+  Result of print(results):
+
+  ```python
+
+  {'results': 'https://telegra.ph/A-Title-for-telegraph-page-05-25', 'join': '@vk_zone', 'success': True}
+
+   ```
+</details>
+
+<details>
+  <summary>Write</summary>
+
+
+  ```python
+
+  from TheApi import api
+
+  text = "Jai shree Ram"
+
+  results= api.write(text)
+
+  print(results)
+  ```
+
+  Result of print(results):
+
+  ```python
+  https://telegra.ph/file/63ff2e31cae67d511cfae.jpg
+
+  ```
+</details>
+
 
 This Project is Licensed under [License](https://github.com/Vivekkumar-IN/TheApi)
