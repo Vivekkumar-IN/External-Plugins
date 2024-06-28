@@ -74,6 +74,34 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 </details>
 
 <details>
+  <summary>Hashtags </summary>
+
+
+  ```python
+  from TheApi import api
+
+  text = "telegram"
+
+  hashtags = gen_hashtag(text)
+
+  print(hashtags)
+
+  ```
+  Result of print(hashtags):
+
+  ```python
+
+  
+Hashtags:
+#telegram  #telegramchannel  #telegrama  #telegramstickers  #telegram0123378624  #telegramtakeover  #telegramaanimado  #telegrambot  #telegramer  #telegramstickerpack  #telegramsams  #telegramsam  #Telegrams  #telegramma  #telegramgp  #TelegramIsBetter
+
+ similar hashtags:
+#telegramchannel #telegrama #telegramstickers #telegram0123378624 #telegramtakeover #telegramaanimado #telegrambot #telegramer #telegramstickerpack #telegramsams #telegramsam #Telegrams #telegramma #telegramgp #TelegramIsBetter
+  ```
+</details>
+
+
+<details>
 <summary>Jokes</summary>
 
 
