@@ -29,6 +29,8 @@ from random_word import RandomWords
 from PIL import Image, ImageDraw, ImageFont
 from telegraph import upload_file, Telegraph
 from .errors import InvalidAmountError
+from .functions import MORSE_CODE_DICT
+
 telegraph = Telegraph()
 telegraph.create_account(short_name='RAM SIYA RAM')
 
@@ -191,8 +193,17 @@ class Myapi:
         similar_hashtags_div = soup.find('div', id='copy-hashtags-similar')
         similar_hashtags = similar_hashtags_div.text.strip() if similar_hashtags_div else ""
         return f"Hashtags:\n{hashtags}\n\n Similar hashtags:\n{similar_hashtags}" 
-        
 
+
+    def morse_encode(self, text):
+        text = text.upper()
+        morse_code = ' '.join(MORSE_CODE_DICT.get(char, char) for char in text)
+        return morse_code
+
+    def morse_decode(morse_code):
+        morse_code_dict_reversed = {value: key for key, value in MORSE_CODE_DICT.items()}
+        text = ''.join(morse_code_dict_reversed.get(char, '') for char in morse_code.split(' '))
+        return text.replace('/', ' ')
 
 
 api = Myapi()
