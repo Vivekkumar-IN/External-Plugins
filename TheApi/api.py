@@ -23,8 +23,11 @@ SOFTWARE.'''
 import os
 import json
 import requests
+import random
+import nltk
 from io import BytesIO
 from bs4 import BeautifulSoup
+from nltk.corpus import words
 from random_word import RandomWords
 from PIL import Image, ImageDraw, ImageFont
 from telegraph import upload_file, Telegraph
@@ -33,6 +36,8 @@ from .functions import MORSE_CODE_DICT
 
 telegraph = Telegraph()
 telegraph.create_account(short_name='RAM SIYA RAM')
+nltk.download('words')
+
 
 class Myapi:
     def __init__(self):
@@ -47,9 +52,8 @@ class Myapi:
         return {"quote": quote, "author": author, "join": "@vk_zone"}
  
     def randomword(self):
-        r = RandomWords()
-        result = r.get_random_word()
-        return result
+        word_list = words.words()
+        return random.choice(word_list)
 
 
     def write(self, text):
@@ -175,6 +179,7 @@ class Myapi:
         if response['status']:    
             results = response['jokeContent']
             return results
+
     def get_uselessfact(self):
         results = requests.get("https://uselessfacts.jsph.pl/api/v2/facts/random").json()['text']
         return {"results": results,"join": "@TheTeamVivek", "success": True}
