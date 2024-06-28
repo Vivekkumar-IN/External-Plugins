@@ -1,6 +1,6 @@
-requests
 beautifulsoup4
+requests
 Random-Word
 pillow==9.5.0
+nltk
 telegraph
-
