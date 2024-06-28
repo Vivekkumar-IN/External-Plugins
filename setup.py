@@ -6,7 +6,7 @@ def read_requirements():
 
 setup(
     name='TheApi',
-    version='0.8',
+    version='0.9',
     packages=find_packages(),
     install_requires=read_requirements(),
 )
