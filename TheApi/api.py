@@ -13,8 +13,6 @@ telegraph = Telegraph()
 
 telegraph.create_account(short_name="RAM SIYA RAM")
 
-nltk.download("words")
-
 
 class TheApi:
     def __init__(self):
