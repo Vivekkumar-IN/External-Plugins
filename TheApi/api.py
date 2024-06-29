@@ -1,11 +1,9 @@
 import os
 import json
 import requests
-import random
 import nltk
 from io import BytesIO
 from bs4 import BeautifulSoup
-from nltk.corpus import words
 from PIL import Image, ImageDraw, ImageFont
 from telegraph import upload_file, Telegraph
 from .errors import InvalidAmountError
@@ -33,7 +31,7 @@ class TheApi:
     def randomword(self):
         url = f"https://random-word-api.herokuapp.com/word?number=1"
         response = requests.get(url)
-    
+
         if response.status_code == 200:
             return response.json()
         else:
@@ -275,16 +273,14 @@ class TheApi:
         else:
             return {"error": f"Error: {response.status_code} - {response.json()}"}
 
-
     def words(self, num_words):
         url = f"https://random-word-api.herokuapp.com/word?number={num_words}"
         response = requests.get(url)
-    
+
         if response.status_code == 200:
             return response.json()
         else:
             return []
-
 
 
 api = TheApi()
