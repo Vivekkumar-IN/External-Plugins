@@ -18,7 +18,7 @@ telegraph.create_account(short_name="RAM SIYA RAM")
 nltk.download("words")
 
 
-class Myapi:
+class TheApi:
     def __init__(self):
         pass
 
@@ -254,7 +254,7 @@ class Myapi:
         else:
             return {"error": "Failed to fetch search results"}
 
-    def gitHub_search(self, query, max_results=10):
+    def github_search(self, query, max_results=10):
         url = "https://api.github.com/search/repositories"
         headers = {"Accept": "application/vnd.github.v3+json"}
         params = {"q": query, "per_page": max_results}
@@ -278,4 +278,4 @@ class Myapi:
             return {"error": f"Error: {response.status_code} - {response.json()}"}
 
 
-api = Myapi()
+api = TheApi()
