@@ -194,8 +194,7 @@ raise InvalidAmountError(amount)
   ```
   results of print:
   ```python
-  
-.... . .-.. .-.. - / . - .-. .-.. -..``
+  .... . .-.. .-.. - / . - .-. .-.. -..```
 
   Decode 
 
