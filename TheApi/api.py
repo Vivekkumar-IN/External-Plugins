@@ -254,35 +254,28 @@ class Myapi:
         else:
             return {"error": "Failed to fetch search results"}
 
-
-
     def gitHub_search(self, query, max_results=10):
-        url = 'https://api.github.com/search/repositories'
-        headers = {
-            'Accept': 'application/vnd.github.v3+json'
-        }
-        params = {
-            'q': query,
-            'per_page': max_results
-        }
+        url = "https://api.github.com/search/repositories"
+        headers = {"Accept": "application/vnd.github.v3+json"}
+        params = {"q": query, "per_page": max_results}
 
         response = requests.get(url, headers=headers, params=params)
 
         if response.status_code == 200:
             results = response.json()
-            repositories = results['items']
+            repositories = results["items"]
             repo_list = []
             for repo in repositories:
                 repo_info = {
-                    'name': repo['name'],
-                    'full_name': repo['full_name'],
-                    'description': repo['description'],
-                    'url': repo['html_url']
+                    "name": repo["name"],
+                    "full_name": repo["full_name"],
+                    "description": repo["description"],
+                    "url": repo["html_url"],
                 }
                 repo_list.append(repo_info)
             return repo_list
         else:
-            return {'error': f"Error: {response.status_code} - {response.json()}"}
+            return {"error": f"Error: {response.status_code} - {response.json()}"}
 
 
 api = Myapi()
