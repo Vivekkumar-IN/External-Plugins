@@ -177,17 +177,29 @@ class Myapi:
         similar_hashtags = similar_hashtags_div.text.strip() if similar_hashtags_div else ""
         return f"Hashtags:\n{hashtags}\n\n Similar hashtags:\n{similar_hashtags}" 
 
-
-    def morse_encode(self, text):
-        text = text.upper()
-        morse_code = ' '.join(MORSE_CODE_DICT.get(char, char) for char in text)
-        return morse_code
-
-    def morse_decode(self, morse_code):
-        morse_code_dict_reversed = {value: key for key, value in MORSE_CODE_DICT.items()}
-        text = ''.join(morse_code_dict_reversed.get(char, '') for char in morse_code.split(' '))
-        return text.replace('/', ' ')
-
+    def morse_code(self, txt):
+        MORSE_CODE_DICT_REVERSED = {value: key for key, value in MORSE_CODE_DICT.items()}
+         is_morse = all(char in ".- /" for char in txt)
+   
+        if is_morse:
+            decoded_message = ''
+            words = txt.split(' / ')
+            for word in words:
+                for morse_char in word.split():
+                    if morse_char in MORSE_CODE_DICT_REVERSED:
+                        decoded_message += MORSE_CODE_DICT_REVERSED[morse_char]
+                    else:
+                        return f"Error: Morse code '{morse_char}' not recognized."
+                decoded_message += ' '
+            return decoded_message.strip()
+        else:
+            encoded_message = ''
+            for char in txt.upper():
+                if char in MORSE_CODE_DICT:
+                    encoded_message += MORSE_CODE_DICT[char] + ' '
+                else:
+                    return f"Error: Character '{char}' cannot be encoded in Morse code."
+            return encoded_message.strip()
 
     def wikipedia(self, query):
         search_url = "https://en.wikipedia.org/w/api.php"
