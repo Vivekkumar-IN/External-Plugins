@@ -53,9 +53,13 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
   ```
 
 </details>
+ 
+
+</details>
 
 <details>
-  <summary>GitHub Search</summary>
+  <summary>GitHub search</summary>
+
 
   ```python
 
@@ -74,10 +78,34 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
   Result of print(results):
 
   ```python
-[{'name': 'YukkiMusicBot', 'full_name': 'TeamYukki/YukkiMusicBot', 'description': 'Telegram Group Calls Streaming bot with some useful features, written in Python with Pyrogram and Py-Tgcalls. Supporting platforms like Youtube, Spotify, Resso, AppleMusic, Soundcloud and M3u8 Links.', 'url': 'https://github.com/TeamYukki/YukkiMusicBot'}, {'name': 'YukkiMusic-Old', 'full_name': 'NowayXD/YukkiMusic-Old', 'description': 'veez mega ( private music bot )', 'url': 'https://github.com/NowayXD/YukkiMusic-Old'}, {'name': 'YukkiMusicBot', 'full_name': 'YukkiOwner/YukkiMusicBot', 'description': 'About Telegram Group Calls Streaming bot with some useful features, written in Python with Pyrogram and Py-Tgcalls. Supporting platforms like Youtube, Spotify, Resso, AppleMusic, Soundcloud and M3u8 Links.', 'url': 'https://github.com/YukkiOwner/YukkiMusicBot'}, {'name': 'Testing-Alpha', 'full_name': 'SexyShekharXD/Testing-Alpha', 'description': 'YukkiMusic with new pyrogram v2 and pytgcalls with ntgcalls implimentation', 'url': 'https://github.com/SexyShekharXD/Testing-Alpha'}, {'name': 'YukkiMusic', 'full_name': 'crazyworld-izzy/YukkiMusic', 'description': None, 'url': 'https://github.com/crazyworld-izzy/YukkiMusic'}, {'name': 'YukkiMusicOld', 'full_name': 'Randi356/YukkiMusicOld', 'description': None, 'url': 'https://github.com/Randi356/YukkiMusicOld'}, {'name': 'YukkiMusic', 'full_name': 'TheTeamVivek/YukkiMusic', 'description': 'YukkiMusic based on YukkiMusicBot', 'url': 'https://github.com/TheTeamVivek/YukkiMusic'}, {'name': 'YukkiMusicBot', 'full_name': 'Rahulsharma45/YukkiMusicBot', 'description': None, 'url': 'https://github.com/Rahulsharma45/YukkiMusicBot'}, {'name': 'https-github.com-TeamYukki-YukkiMusicBot', 'full_name': 'supernovark/https-github.com-TeamYukki-YukkiMusicBot', 'description': None, 'url': 'https://github.com/supernovark/https-github.com-TeamYukki-YukkiMusicBot'}, {'name': 'Yukkimusic', 'full_name': 'EkooNihh/Yukkimusic', 'description': 'https://github.com/TeamYukki/YukkiMusicBot', 'url': 'https://github.com/EkooNihh/Yukkimusic'}]```
+  
 
+[{'name': 'YukkiMusicBot', 'full_name': 'TeamYukki/YukkiMusicBot', 'description': 'Telegram Group Calls Streaming bot with some useful features, written in Python with Pyrogram and Py-Tgcalls. Supporting platforms like Youtube, Spotify, Resso, AppleMusic, Soundcloud and M3u8 Links.', 'url': 'https://github.com/TeamYukki/YukkiMusicBot'}, {'name': 'YukkiMusic-Old', 'full_name': 'NowayXD/YukkiMusic-Old', 'description': 'veez mega ( private music bot )', 'url': 'https://github.com/NowayXD/YukkiMusic-Old'}, {'name': 'YukkiMusicBot', 'full_name': 'YukkiOwner/YukkiMusicBot', 'description': 'About Telegram Group Calls Streaming bot with some useful features, written in Python with Pyrogram and Py-Tgcalls. Supporting platforms like Youtube, Spotify, Resso, AppleMusic, Soundcloud and M3u8 Links.', 'url': 'https://github.com/YukkiOwner/YukkiMusicBot'}, {'name': 'Testing-Alpha', 'full_name': 'SexyShekharXD/Testing-Alpha', 'description': 'YukkiMusic with new pyrogram v2 and pytgcalls with ntgcalls implimentation', 'url': 'https://github.com/SexyShekharXD/Testing-Alpha'}, {'name': 'YukkiMusic', 'full_name': 'crazyworld-izzy/YukkiMusic', 'description': None, 'url': 'https://github.com/crazyworld-izzy/YukkiMusic'}, {'name': 'YukkiMusicOld', 'full_name': 'Randi356/YukkiMusicOld', 'description': None, 'url': 'https://github.com/Randi356/YukkiMusicOld'}, {'name': 'YukkiMusic', 'full_name': 'TheTeamVivek/YukkiMusic', 'description': 'YukkiMusic based on YukkiMusicBot', 'url': 'https://github.com/TheTeamVivek/YukkiMusic'}, {'name': 'YukkiMusicBot', 'full_name': 'Rahulsharma45/YukkiMusicBot', 'description': None, 'url': 'https://github.com/Rahulsharma45/YukkiMusicBot'}, {'name': 'https-github.com-TeamYukki-YukkiMusicBot', 'full_name': 'supernovark/https-github.com-TeamYukki-YukkiMusicBot', 'description': None, 'url': 'https://github.com/supernovark/https-github.com-TeamYukki-YukkiMusicBot'}, {'name': 'Yukkimusic', 'full_name': 'EkooNihh/Yukkimusic', 'description': 'https://github.com/TeamYukki/YukkiMusicBot', 'url': 'https://github.com/EkooNihh/Yukkimusic'}]
+
+  ```
 </details>
 
+
+
+<details>
+  <summary>Hindi Joke </summary>
+
+
+  ```python
+  from TheApi import api
+
+  joke = api.get_hindi_jokes()
+
+  print(joke)
+
+  ```
+  Result of print(joke):
+
+  ```python
+
+  हमारे समाज में रीति रिवाज और प्रथाएं इतनी महान है कि एक निकम्मा पुरुष भी विवाह के बाद परमेश्वर बन जाता है 😆🤣😋😉
+  ```
+</details>
 
 
 <details>
