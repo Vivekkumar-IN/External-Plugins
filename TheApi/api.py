@@ -31,8 +31,13 @@ class TheApi:
         return {"quote": quote, "author": author, "join": "@vk_zone"}
 
     def randomword(self):
-        word_list = words.words()
-        return random.choice(word_list)
+        url = f"https://random-word-api.herokuapp.com/word?number=1"
+        response = requests.get(url)
+    
+        if response.status_code == 200:
+            return response.json()
+        else:
+            return "None"
 
     def write(self, text):
         tryimg = "https://graph.org/file/1f8d00177ac2429b101b9.jpg"
@@ -115,13 +120,6 @@ class TheApi:
         return f"https://telegra.ph{uploaded_file[0]}"
 
     def telegraph(self, title, query):
-        """
-        This project includes code from the python273's telegraph library, which is licensed under the MIT License.
-
-        MIT License
-        Copyright (c) 2018 python273
-
-        """
         response = telegraph.create_page(title, html_content=query)
         url = response["url"]
         return {"results": url, "join": "@vk_zone", "success": True}
@@ -276,6 +274,17 @@ class TheApi:
             return repo_list
         else:
             return {"error": f"Error: {response.status_code} - {response.json()}"}
+
+
+    def words(self, num_words):
+        url = f"https://random-word-api.herokuapp.com/word?number={num_words}"
+        response = requests.get(url)
+    
+        if response.status_code == 200:
+            return response.json()
+        else:
+            return []
+
 
 
 api = TheApi()
