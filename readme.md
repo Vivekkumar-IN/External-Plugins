@@ -69,7 +69,7 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 
   max_results = 10
   
-  results = api.gitHub_search(query, max_results)
+  results = api.github_search(query, max_results)
   
   print(results)
 
