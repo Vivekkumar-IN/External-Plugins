@@ -205,13 +205,13 @@ class Myapi:
         morse_code = ' '.join(MORSE_CODE_DICT.get(char, char) for char in text)
         return morse_code
 
-    def morse_decode(morse_code):
+    def morse_decode(self, morse_code):
         morse_code_dict_reversed = {value: key for key, value in MORSE_CODE_DICT.items()}
         text = ''.join(morse_code_dict_reversed.get(char, '') for char in morse_code.split(' '))
         return text.replace('/', ' ')
 
 
-    def wikipedia(query):
+    def wikipedia(self, query):
         search_url = "https://en.wikipedia.org/w/api.php"
     
         params = {
