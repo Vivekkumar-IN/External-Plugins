@@ -82,7 +82,7 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 
   text = "telegram"
 
-  hashtags = gen_hashtag(text)
+  hashtags = api.gen_hashtag(text)
 
   print(hashtags)
 
@@ -192,6 +192,31 @@ raise InvalidAmountError(amount)
   print(results)
 
   ```
+  results of print:
+  ```python
+  
+.... . .-.. .-.. - / . - .-. .-.. -..``
+
+</details>
+
+
+details>
+  <summary>Morse decode</summary> 
+
+  ```python
+  from TheApi import api
+
+  text = ".... . .-.. .-.. - / . - .-. .-.. -.."
+
+  results = api.morse_decode(text)
+
+  print(results)
+
+  ```
+  results of print:
+  ```python
+  
+HELLO WORLD```
 
 </details>
 
