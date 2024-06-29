@@ -215,7 +215,7 @@ raise InvalidAmountError(amount)
 
 
 
-
+</details>
 <details>
   <summary>Random quote</summary> 
 
