@@ -4,6 +4,7 @@ def read_requirements():
     with open('requirements.txt') as f:
         return f.read().splitlines()
 
+
 setup(
     name='TheApi',
     version='0.9',
