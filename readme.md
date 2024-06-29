@@ -79,25 +79,6 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 </details>
 
 
-<details>
-  <summary>Hindi Joke </summary>
-
-
-  ```python
-  from TheApi import api
-
-  joke = api.get_hindi_jokes()
-
-  print(joke)
-
-  ```
-  Result of print(joke):
-
-  ```python
-
-  हमारे समाज में रीति रिवाज और प्रथाएं इतनी महान है कि एक निकम्मा पुरुष भी विवाह के बाद परमेश्वर बन जाता है 😆🤣😋😉
-  ```
-</details>
 
 <details>
   <summary>Hashtags </summary>
