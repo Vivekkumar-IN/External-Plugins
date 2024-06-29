@@ -187,7 +187,7 @@ raise InvalidAmountError(amount)
 
   text = "HELLO WORLD"
 
-  results = api.morse_encode(text)
+  results = api.morse_code(text)
 
   print(results)
 
@@ -197,18 +197,14 @@ raise InvalidAmountError(amount)
   
 .... . .-.. .-.. - / . - .-. .-.. -..``
 
-</details>
-
-
-details>
-  <summary>Morse decode</summary> 
+  Decode 
 
   ```python
   from TheApi import api
 
   text = ".... . .-.. .-.. - / . - .-. .-.. -.."
 
-  results = api.morse_decode(text)
+  results = api.morse_code(text)
 
   print(results)
 
@@ -216,9 +212,9 @@ details>
   results of print:
   ```python
   
-HELLO WORLD```
+  HELLO WORLD```
 
-</details>
+
 
 
 <details>
