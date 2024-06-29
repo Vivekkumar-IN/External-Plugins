@@ -181,7 +181,7 @@ class Myapi:
 
     def morse_code(self, txt):
         MORSE_CODE_DICT_REVERSED = {value: key for key, value in MORSE_CODE_DICT.items()}
-         is_morse = all(char in ".- /" for char in txt)
+        is_morse = all(char in ".- /" for char in txt)
    
         if is_morse:
             decoded_message = ''
