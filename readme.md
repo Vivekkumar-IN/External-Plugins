@@ -55,7 +55,6 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 </details>
 
 <details>
-
   <summary>GitHub Search</summary>
 
   ```python
@@ -81,7 +80,6 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 
 
 <details>
-
   <summary>Hindi Joke </summary>
 
 
