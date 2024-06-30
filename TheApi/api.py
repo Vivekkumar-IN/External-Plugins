@@ -27,14 +27,14 @@ class TheApi:
 
         ```python
         from TheApi import api
-        
+
         quote = api.quote()
-       
+
         print(quote)
 
-   
+
         Results
-        
+
         Beware lest you lose the substance by grasping at the shadow.
         author - Aesop
         """
@@ -413,7 +413,11 @@ class TheApi:
         method = getattr(self, method_name, None)
         if method and callable(method):
             docstring = method.__doc__
-            return docstring.strip() if docstring else f"No help available for method '{method_name}'."
+            return (
+                docstring.strip()
+                if docstring
+                else f"No help available for method '{method_name}'."
+            )
         else:
             return f"Method '{method_name}' not found."
 
