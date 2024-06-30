@@ -86,7 +86,7 @@ https://cdn2.thecatapi.com/images/1sk.jpg
 
   image = api.dog()
   
-  print(advice)
+  print(image)
 
   ```
 
