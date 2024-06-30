@@ -36,7 +36,7 @@ class TheApi:
         Results
 
         Beware lest you lose the substance by grasping at the shadow.
-        author - Aesop
+        author - Aesop```
         """
         qut = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x61\x70\x69\x2e\x71\x75\x6f\x74\x61\x62\x6c\x65\x2e\x69\x6f\x2f\x72\x61\x6e\x64\x6f\x6d"
         a = requests.get(qut)
