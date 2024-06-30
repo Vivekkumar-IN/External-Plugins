@@ -282,6 +282,30 @@ My ex had an accident. I told the paramedics the wrong blood type for her. She'l
   ```
 </details>
 
+<details>
+  <summary>Pypi</summary>
+
+
+  ```python
+
+  from TheApi import api
+
+  info = api.pypi("requests")
+  
+  print(info)
+
+  ```
+
+  Result of print(info):
+
+  ```python
+  
+
+{'name': 'requests', 'version': '2.32.3', 'summary': 'Python HTTP for Humans.', 'author': 'Kenneth Reitz', 'author_email': 'me@kennethreitz.org', 'license': 'Apache-2.0', 'home_page': 'https://requests.readthedocs.io', 'package_url': 'https://pypi.org/project/requests/', 'requires_python': '>=3.8', 'keywords': None, 'classifiers': ['Development Status :: 5 - Production/Stable', 'Environment :: Web Environment', 'Intended Audience :: Developers', 'License :: OSI Approved :: Apache Software License', 'Natural Language :: English', 'Operating System :: OS Independent', 'Programming Language :: Python', 'Programming Language :: Python :: 3', 'Programming Language :: Python :: 3 :: Only', 'Programming Language :: Python :: 3.10', 'Programming Language :: Python :: 3.11', 'Programming Language :: Python :: 3.12', 'Programming Language :: Python :: 3.8', 'Programming Language :: Python :: 3.9', 'Programming Language :: Python :: Implementation :: CPython', 'Programming Language :: Python :: Implementation :: PyPy', 'Topic :: Internet :: WWW/HTTP', 'Topic :: Software Development :: Libraries'], 'project_urls': {'Documentation': 'https://requests.readthedocs.io', 'Homepage': 'https://requests.readthedocs.io', 'Source': 'https://github.com/psf/requests'}}
+
+  ```
+</details>
+
 
 
 <details>
