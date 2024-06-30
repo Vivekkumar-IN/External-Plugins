@@ -295,18 +295,26 @@ class TheApi:
             topics = github_search("python", search_type="topics")
         """
         valid_search_types = [
-            "repositories", "users", "organizations", "issues",
-            "pull_requests", "commits", "labels", "topics"
+            "repositories",
+            "users",
+            "organizations",
+            "issues",
+            "pull_requests",
+            "commits",
+            "labels",
+            "topics",
         ]
 
         if search_type not in valid_search_types:
-            return {"error": f"Invalid search type. Valid types are: {valid_search_types}"}
+            return {
+                "error": f"Invalid search type. Valid types are: {valid_search_types}"
+            }
 
         url_mapping = {
             "pull_requests": "https://api.github.com/search/issues",
             "organizations": "https://api.github.com/search/users",
             "labels": "https://api.github.com/search/labels",
-            "topics": "https://api.github.com/search/topics"
+            "topics": "https://api.github.com/search/topics",
         }
 
         if search_type in url_mapping:
@@ -403,12 +411,13 @@ class TheApi:
         except requests.exceptions.RequestException as e:
             return {"error": f"Request exception: {e}"}
         except requests.exceptions.HTTPError as e:
-            return {"error": f"HTTP error: {e.response.status_code} - {e.response.text}"}
+            return {
+                "error": f"HTTP error: {e.response.status_code} - {e.response.text}"
+            }
         except KeyError as e:
             return {"error": f"Key error: {e}"}
         except Exception as e:
             return {"error": f"Unexpected error: {e}"}
-
 
     def words(self, num_words: int):
         url = f"https://random-word-api.herokuapp.com/word?number={num_words}"
