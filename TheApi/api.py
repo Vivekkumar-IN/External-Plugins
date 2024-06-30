@@ -99,7 +99,6 @@ class TheApi:
         # this api belongs to nep coders of @DEVSNP
         if response.status_code == 200:
             return response.json()["answer"]
-             
 
     def imagine(self, query):
         image_url = f"https://aiimage.hellonepdevs.workers.dev/?prompt={query}"
