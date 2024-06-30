@@ -17,33 +17,33 @@ class TheApi:
         pass
 
     def quote(self):
-        """
-        Fetches a random quote from an API and returns it along with the author.
+        """Fetches a random quote from an API and returns it along with the author.
 
-        Returns:
-        str: A formatted string containing the quote and its author.
+Returns:
+str: A formatted string containing the quote and its author.
 
-        EXAMPLE:
+EXAMPLE:
 
-        ```python
-        from TheApi import api
+from TheApi import api
 
-        quote = api.quote()
+quote = api.quote()
 
-        print(quote)
+print(quote)
 
 
-        Results
+Results
 
-        Beware lest you lose the substance by grasping at the shadow.
-        author - Aesop```
-        """
+Beware lest you lose the substance by grasping at the shadow.
+
+author - Aesop"""
+
         qut = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x61\x70\x69\x2e\x71\x75\x6f\x74\x61\x62\x6c\x65\x2e\x69\x6f\x2f\x72\x61\x6e\x64\x6f\x6d"
         a = requests.get(qut)
         b = a.json()
         quote = b["content"]
         author = b["author"]
         return f"{quote}\n\nauthor - {author}"
+
 
     def randomword(self):
         url = f"https://random-word-api.herokuapp.com/word?number=1"
