@@ -265,54 +265,50 @@ class TheApi:
         else:
             return {"error": "Failed to fetch search results"}
 
-    import requests
-
     def github_search(self, query, search_type="repositories", max_results=10):
-         """
-    Search GitHub for various types of content.
-    
-    Parameters:
-        query (str): The search query.
-        search_type (str): The type of search (default is "repositories").
-        max_results (int): The maximum number of results to return (default is 10).
-        
-    Returns:
-        list: A list of search results or an error message.
-    
-    Examples:
-        respiratories = github_search("machine learning", search_type="repositories")
+        """
+        Search GitHub for various types of content.
 
-        users = github_search("torvalds", search_type="users")
+        Parameters:
+            query (str): The search query.
+            search_type (str): The type of search (default is "repositories").
+            max_results (int): The maximum number of results to return (default is 10).
 
-        organization = github_search("github", search_type="organizations")
+        Returns:
+            list: A list of search results or an error message.
 
-        issues = github_search("bug fix", search_type="issues")
+        Examples:
+            repositories = github_search("machine learning", search_type="repositories")
 
-        pull_requests = github_search("new feature", search_type="pull_requests")
+            users = github_search("torvalds", search_type="users")
 
-        commits = github_search("initial commit", search_type="commits")
+            organization = github_search("github", search_type="organizations")
 
-        labels = github_search("enhancement", search_type="labels")
+            issues = github_search("bug fix", search_type="issues")
 
-        topics = github_search("python", search_type="topics")
+            pull_requests = github_search("new feature", search_type="pull_requests")
 
-    """
-    
-       valid_search_types = [
-        "repositories", "users", "organizations", "issues",
-        "pull_requests", "commits", "labels", "topics"
+            commits = github_search("initial commit", search_type="commits")
+
+            labels = github_search("enhancement", search_type="labels")
+
+            topics = github_search("python", search_type="topics")
+        """
+        valid_search_types = [
+            "repositories", "users", "organizations", "issues",
+            "pull_requests", "commits", "labels", "topics"
         ]
-    
+
         if search_type not in valid_search_types:
             return {"error": f"Invalid search type. Valid types are: {valid_search_types}"}
-    
+
         url_mapping = {
-        "pull_requests": "https://api.github.com/search/issues",
-        "organizations": "https://api.github.com/search/users",
-        "labels": "https://api.github.com/search/labels",
-        "topics": "https://api.github.com/search/topics"
+            "pull_requests": "https://api.github.com/search/issues",
+            "organizations": "https://api.github.com/search/users",
+            "labels": "https://api.github.com/search/labels",
+            "topics": "https://api.github.com/search/topics"
         }
-    
+
         if search_type in url_mapping:
             url = url_mapping[search_type]
             if search_type == "pull_requests":
@@ -321,97 +317,98 @@ class TheApi:
                 query += " type:org"
         else:
             url = f"https://api.github.com/search/{search_type}"
-    
+
         headers = {"Accept": "application/vnd.github.v3+json"}
         params = {"q": query, "per_page": max_results}
-    
+
         try:
             response = requests.get(url, headers=headers, params=params)
             response.raise_for_status()
             results = response.json()
             items = results.get("items", [])
-        
+
             result_list = []
-        
+
             for item in items:
                 item_info = {}
                 if search_type == "repositories":
                     item_info = {
-                    "name": item["name"],
-                    "full_name": item["full_name"],
-                    "description": item["description"],
-                    "url": item["html_url"],
-                    "language": item.get("language"),
-                    "stargazers_count": item.get("stargazers_count"),
-                    "forks_count": item.get("forks_count"),
+                        "name": item["name"],
+                        "full_name": item["full_name"],
+                        "description": item["description"],
+                        "url": item["html_url"],
+                        "language": item.get("language"),
+                        "stargazers_count": item.get("stargazers_count"),
+                        "forks_count": item.get("forks_count"),
                     }
                 elif search_type in ["users", "organizations"]:
                     item_info = {
-                    "login": item["login"],
-                    "id": item["id"],
-                    "url": item["html_url"],
-                    "avatar_url": item.get("avatar_url"),
-                    "type": item.get("type"),
-                    "site_admin": item.get("site_admin"),
-                    "name": item.get("name"),
-                    "company": item.get("company"),
-                    "blog": item.get("blog"),
-                    "location": item.get("location"),
-                    "email": item.get("email"),
-                    "bio": item.get("bio"),
-                    "public_repos": item.get("public_repos"),
-                    "public_gists": item.get("public_gists"),
-                    "followers": item.get("followers"),
-                    "following": item.get("following"),
+                        "login": item["login"],
+                        "id": item["id"],
+                        "url": item["html_url"],
+                        "avatar_url": item.get("avatar_url"),
+                        "type": item.get("type"),
+                        "site_admin": item.get("site_admin"),
+                        "name": item.get("name"),
+                        "company": item.get("company"),
+                        "blog": item.get("blog"),
+                        "location": item.get("location"),
+                        "email": item.get("email"),
+                        "bio": item.get("bio"),
+                        "public_repos": item.get("public_repos"),
+                        "public_gists": item.get("public_gists"),
+                        "followers": item.get("followers"),
+                        "following": item.get("following"),
                     }
                 elif search_type in ["issues", "pull_requests"]:
                     item_info = {
-                    "title": item["title"],
-                    "user": item["user"]["login"],
-                    "state": item["state"],
-                    "url": item["html_url"],
-                    "comments": item.get("comments"),
-                    "created_at": item.get("created_at"),
-                    "updated_at": item.get("updated_at"),
-                    "closed_at": item.get("closed_at"),
+                        "title": item["title"],
+                        "user": item["user"]["login"],
+                        "state": item["state"],
+                        "url": item["html_url"],
+                        "comments": item.get("comments"),
+                        "created_at": item.get("created_at"),
+                        "updated_at": item.get("updated_at"),
+                        "closed_at": item.get("closed_at"),
                     }
                 elif search_type == "commits":
                     item_info = {
-                    "sha": item["sha"],
-                    "commit_message": item["commit"]["message"],
-                    "author": item["commit"]["author"]["name"],
-                    "date": item["commit"]["author"]["date"],
-                    "url": item["html_url"],
+                        "sha": item["sha"],
+                        "commit_message": item["commit"]["message"],
+                        "author": item["commit"]["author"]["name"],
+                        "date": item["commit"]["author"]["date"],
+                        "url": item["html_url"],
                     }
                 elif search_type == "labels":
                     item_info = {
-                    "name": item["name"],
-                    "color": item["color"],
-                    "description": item.get("description"),
-                    "url": item.get("url"),
+                        "name": item["name"],
+                        "color": item["color"],
+                        "description": item.get("description"),
+                        "url": item.get("url"),
                     }
                 elif search_type == "topics":
                     item_info = {
-                    "name": item["name"],
-                    "display_name": item.get("display_name"),
-                    "short_description": item.get("short_description"),
-                    "description": item.get("description"),
-                    "created_by": item.get("created_by"),
-                    "url": item.get("url") if "url" in item else None,
+                        "name": item["name"],
+                        "display_name": item.get("display_name"),
+                        "short_description": item.get("short_description"),
+                        "description": item.get("description"),
+                        "created_by": item.get("created_by"),
+                        "url": item.get("url") if "url" in item else None,
                     }
-            
+
                 result_list.append(item_info)
-        
+
             return result_list
-    
+
         except requests.exceptions.RequestException as e:
-             return {"error": f"Request exception: {e}"}
+            return {"error": f"Request exception: {e}"}
         except requests.exceptions.HTTPError as e:
             return {"error": f"HTTP error: {e.response.status_code} - {e.response.text}"}
         except KeyError as e:
             return {"error": f"Key error: {e}"}
         except Exception as e:
             return {"error": f"Unexpected error: {e}"}
+
 
     def words(self, num_words: int):
         url = f"https://random-word-api.herokuapp.com/word?number={num_words}"
