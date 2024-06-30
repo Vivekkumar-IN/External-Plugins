@@ -127,29 +127,6 @@ https://random.dog/1f1d51c0-cdf7-4efb-8ae0-ecd7d6f73481.jpeg
   ```
 </details>
 
-
-
-<details>
-  <summary>Hindi Joke </summary>
-
-
-  ```python
-  from TheApi import api
-
-  joke = api.get_hindi_jokes()
-
-  print(joke)
-
-  ```
-  Result of print(joke):
-
-  ```python
-
-  हमारे समाज में रीति रिवाज और प्रथाएं इतनी महान है कि एक निकम्मा पुरुष भी विवाह के बाद परमेश्वर बन जाता है 😆🤣😋😉
-  ```
-</details>
-
-
 <details>
   <summary>Hashtags </summary>
 
@@ -234,50 +211,30 @@ My ex had an accident. I told the paramedics the wrong blood type for her. She'l
 
   ```
 
-  ```python
-
-  response = api.get_jokes()
-  # This will return 1 Jokes
-
-  response = api.get_jokes(2)
-  # This will return 1 Jokes
-
-  # like this you can get 10 Jokes
-
-  # if the number is greater then 10 in cause an exception returns 
-
-  # Example : 
-
-  import json
-  from TheApi import api
-
-  response = api.get_jokes(13)
-
-  data = json.loads(response)
-
-  jokes = data["jokes"]
-  num = 1
-  Jokes = ""
-  if isinstance(jokes, dict):
-    
-      for key in jokes:
-          a = jokes[key]
-          Jokes+=(f"{num}. {a}\n\n")
-          num+=1
-      print(Jokes)
-
-  else:
-      print(jokes["joke"])
-
-  # in this api.get_jokes(13) the jokes is greater then 10 so the an exception returns 
-
-
-raise InvalidAmountError(amount)
-  TheApi.errors.InvalidAmountError:Invalid amount of jokes requested: 11. Maximum allowed is 10. Minimum allowed is 1.
-
-  ```
 </details>
  
+
+<details>
+  <summary>Hindi Joke </summary>
+
+
+  ```python
+  from TheApi import api
+
+  joke = api.get_hindi_jokes()
+
+  print(joke)
+
+  ```
+  Result of print(joke):
+
+  ```python
+
+  हमारे समाज में रीति रिवाज और प्रथाएं इतनी महान है कि एक निकम्मा पुरुष भी विवाह के बाद परमेश्वर बन जाता है 😆🤣😋😉
+  ```
+</details>
+
+
 <details>
   <summary>Morse</summary>
   
