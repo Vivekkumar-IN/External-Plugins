@@ -1,4 +1,5 @@
 import os
+import inspect
 import requests
 from io import BytesIO
 from bs4 import BeautifulSoup
@@ -441,24 +442,20 @@ class TheApi:
 
     def help(self, method_name):
         """
-        Retrieves the help documentation for a given method.
+        Provides help information for the specified method.
 
-        Args:
-        method_name (str): The name of the method to retrieve help for.
+        Parameters:
+            method_name (str): The name of the method for which to display help.
 
         Returns:
-        str: The help documentation for the specified method.
+            str: The docstring of the specified method.
         """
         method = getattr(self, method_name, None)
-        if method and callable(method):
-            docstring = method.__doc__
-            return (
-                docstring.strip()
-                if docstring
-                else f"No help available for method '{method_name}'."
-            )
+        if method:
+            return inspect.cleandoc(method.__doc__)
         else:
-            return f"Method '{method_name}' not found."
+            return f"No method named '{method_name}' found."
+
 
 
 api = TheApi()
