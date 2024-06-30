@@ -43,7 +43,7 @@ If you are feeling down, try holding a pencil between your top lip and your nose
 
   image = api.cat()
   
-  print(advice)
+  print(image)
 
   ```
 
