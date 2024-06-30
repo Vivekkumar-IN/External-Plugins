@@ -98,8 +98,8 @@ class TheApi:
         )
         # this api belongs to nep coders of @DEVSNP
         if response.status_code == 200:
-            result = response.json()["answer"]
-            return {"results": result, "join": "@vk_zone", "success": True}
+            return response.json()["answer"]
+             
 
     def imagine(self, query):
         image_url = f"https://aiimage.hellonepdevs.workers.dev/?prompt={query}"
@@ -116,15 +116,14 @@ class TheApi:
 
     def telegraph(self, title, query):
         response = telegraph.create_page(title, html_content=query)
-        url = response["url"]
-        return {"results": url, "join": "@vk_zone", "success": True}
+        return response["url"]
 
     def get_advice(self):
         try:
             results = requests.get("https://api.adviceslip.com/advice").json()["slip"][
                 "advice"
             ]
-            return {"results": results, "join": "@TheTeamVivek", "success": True}
+            return results
         except requests.exceptions.RequestException as e:
             return e
 
@@ -159,7 +158,7 @@ class TheApi:
         results = requests.get(
             "https://uselessfacts.jsph.pl/api/v2/facts/random"
         ).json()["text"]
-        return {"results": results, "join": "@TheTeamVivek", "success": True}
+        return results
 
     def gen_hashtag(self, text):
         url = "https://all-hashtag.com/library/contents/ajax_generator.php"
