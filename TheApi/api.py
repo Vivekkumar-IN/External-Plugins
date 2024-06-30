@@ -245,28 +245,112 @@ class TheApi:
         else:
             return {"error": "Failed to fetch search results"}
 
-    def github_search(self, query, max_results=10):
-        url = "https://api.github.com/search/repositories"
+
+    def github_search(self, query, search_type="repositories", max_results=10):
+        valid_search_types = [
+            "repositories", "users", "organizations", "issues",
+            "pull_requests", "commits", "labels", "topics"
+        ]
+        if search_type not in valid_search_types:
+            return {"error": f"Invalid search type. Valid types are: {valid_search_types}"}
+
+        if search_type == "pull_requests":
+            url = "https://api.github.com/search/issues"
+            query += " type:pr"
+        elif search_type == "organizations":
+            url = "https://api.github.com/search/users"
+            query += " type:org"
+        elif search_type == "labels":
+            url = "https://api.github.com/search/labels"
+        elif search_type == "topics":
+            url = "https://api.github.com/search/topics"
+        else:
+            url = f"https://api.github.com/search/{search_type}"
+    
         headers = {"Accept": "application/vnd.github.v3+json"}
         params = {"q": query, "per_page": max_results}
 
-        response = requests.get(url, headers=headers, params=params)
+        try:
+            response = requests.get(url, headers=headers, params=params)
 
-        if response.status_code == 200:
-            results = response.json()
-            repositories = results["items"]
-            repo_list = []
-            for repo in repositories:
-                repo_info = {
-                    "name": repo["name"],
-                    "full_name": repo["full_name"],
-                    "description": repo["description"],
-                    "url": repo["html_url"],
-                }
-                repo_list.append(repo_info)
-            return repo_list
-        else:
-            return {"error": f"Error: {response.status_code} - {response.json()}"}
+            if response.status_code == 200:
+                results = response.json()
+                items = results["items"]
+                result_list = []
+
+                for item in items:
+                    if search_type == "repositories":
+                        item_info = {
+                            "name": item["name"],
+                            "full_name": item["full_name"],
+                            "description": item["description"],
+                            "url": item["html_url"],
+                            "language": item.get("language"),
+                            "stargazers_count": item.get("stargazers_count"),
+                            "forks_count": item.get("forks_count"),
+                        }
+                    elif search_type == "users" or search_type == "organizations":
+                        item_info = {
+                            "login": item["login"],
+                            "id": item["id"],
+                            "url": item["html_url"],
+                            "avatar_url": item.get("avatar_url"),
+                            "type": item.get("type"),
+                            "site_admin": item.get("site_admin"),
+                            "name": item.get("name"),
+                            "company": item.get("company"),
+                            "blog": item.get("blog"),
+                            "location": item.get("location"),
+                            "email": item.get("email"),
+                            "bio": item.get("bio"),
+                            "public_repos": item.get("public_repos"),
+                            "public_gists": item.get("public_gists"),
+                            "followers": item.get("followers"),
+                            "following": item.get("following"),
+                        }
+                    elif search_type == "issues" or search_type == "pull_requests":
+                        item_info = {
+                            "title": item["title"],
+                            "user": item["user"]["login"],
+                            "state": item["state"],
+                            "url": item["html_url"],
+                            "comments": item.get("comments"),
+                            "created_at": item.get("created_at"),
+                            "updated_at": item.get("updated_at"),
+                            "closed_at": item.get("closed_at"),
+                    }
+                    elif search_type == "commits":
+                        item_info = {
+                            "sha": item["sha"],
+                            "commit_message": item["commit"]["message"],
+                            "author": item["commit"]["author"]["name"],
+                            "date": item["commit"]["author"]["date"],
+                            "url": item["html_url"],
+                        }
+                    elif search_type == "labels":
+                        item_info = {
+                            "name": item["name"],
+                            "color": item["color"],
+                            "description": item.get("description"),
+                            "url": item["url"],
+                        }
+                    elif search_type == "topics":
+                        item_info = {
+                            "name": item["name"],
+                            "display_name": item.get("display_name"),
+                            "short_description": item.get("short_description"),
+                            "description": item.get("description"),
+                            "created_by": item.get("created_by"),
+                            "url": item["url"],
+                        }
+
+                    result_list.append(item_info)
+                return result_list
+            else:
+                return {"error": f"Error: {response.status_code} - {response.json()}"}
+    
+        except requests.exceptions.RequestException as e:
+            return {"error": f"Request exception: {e}"}
 
     def words(self, num_words: int):
         url = f"https://random-word-api.herokuapp.com/word?number={num_words}"
