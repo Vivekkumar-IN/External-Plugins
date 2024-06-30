@@ -10,7 +10,7 @@ from .functions import MORSE_CODE_DICT
 
 telegraph = Telegraph()
 
-telegraph.create_account(short_name="RAM SIYA RAM")
+telegraph.create_account(short_name="TheApi")
 
 
 class TheApi:
