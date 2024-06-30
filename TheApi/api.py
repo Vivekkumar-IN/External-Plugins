@@ -268,7 +268,7 @@ class TheApi:
         else:
             return {"error": f"Error: {response.status_code} - {response.json()}"}
 
-    def words(self, num_words):
+    def words(self, num_words: int):
         url = f"https://random-word-api.herokuapp.com/word?number={num_words}"
         response = requests.get(url)
 
@@ -276,6 +276,17 @@ class TheApi:
             return response.json()
         else:
             return []
+
+    def cat(self):
+
+        r = requests.get("https://api.thecatapi.com/v1/images/search")
+        if r.status_code == 200:
+            return r.json()[0]["url"]
+
+    def dog(self):
+        r = requests.get("https://random.dog/woof.json")
+        if r.status_code == 200:
+            return r.json()["url"]
 
 
 api = TheApi()
