@@ -457,4 +457,38 @@ class TheApi:
             return f"No method named '{method_name}' found."
 
 
+    def pypi(self, package_name):
+        """
+    Fetches and returns relevant information about a package from PyPI.
+
+    Args:
+    package_name (str): The name of the package to fetch information for.
+
+    Returns:
+    dict: The relevant package information if found, otherwise None.
+        """
+        url = f"https://pypi.org/pypi/{package_name}/json"
+        response = requests.get(url)
+    
+        if response.status_code == 200:
+            package_info = response.json()
+            info = package_info['info']
+            relevant_info = {
+            'name': info['name'],
+            'version': info['version'],
+            'summary': info['summary'],
+            'author': info['author'],
+            'author_email': info['author_email'],
+            'license': info['license'],
+            'home_page': info['home_page'],
+            'package_url': info['package_url'],
+            'requires_python': info['requires_python'],
+            'keywords': info['keywords'],
+            'classifiers': info['classifiers'],
+            'project_urls': info['project_urls'],
+            }
+            return relevant_info
+        else:
+            return None
+
 api = TheApi()
