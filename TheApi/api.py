@@ -245,14 +245,21 @@ class TheApi:
         else:
             return {"error": "Failed to fetch search results"}
 
-
     def github_search(self, query, search_type="repositories", max_results=10):
         valid_search_types = [
-            "repositories", "users", "organizations", "issues",
-            "pull_requests", "commits", "labels", "topics"
+            "repositories",
+            "users",
+            "organizations",
+            "issues",
+            "pull_requests",
+            "commits",
+            "labels",
+            "topics",
         ]
         if search_type not in valid_search_types:
-            return {"error": f"Invalid search type. Valid types are: {valid_search_types}"}
+            return {
+                "error": f"Invalid search type. Valid types are: {valid_search_types}"
+            }
 
         if search_type == "pull_requests":
             url = "https://api.github.com/search/issues"
@@ -266,7 +273,7 @@ class TheApi:
             url = "https://api.github.com/search/topics"
         else:
             url = f"https://api.github.com/search/{search_type}"
-    
+
         headers = {"Accept": "application/vnd.github.v3+json"}
         params = {"q": query, "per_page": max_results}
 
@@ -318,7 +325,7 @@ class TheApi:
                             "created_at": item.get("created_at"),
                             "updated_at": item.get("updated_at"),
                             "closed_at": item.get("closed_at"),
-                    }
+                        }
                     elif search_type == "commits":
                         item_info = {
                             "sha": item["sha"],
@@ -348,7 +355,7 @@ class TheApi:
                 return result_list
             else:
                 return {"error": f"Error: {response.status_code} - {response.json()}"}
-    
+
         except requests.exceptions.RequestException as e:
             return {"error": f"Request exception: {e}"}
 
