@@ -206,29 +206,31 @@ Hashtags:
   import json
   from TheApi import api
 
-  response = api.get_jokes()
+  data = api.get_jokes() # for only one jokes
+ 
+  print("This will print only One Joke\n" + data)
 
-  data = json.loads(response)
+  jokes = api.get_jokes(3) # You can get jokes up to 10 make sure the amount of jokes is minimum 1 and maximum 10
 
-  jokes = data["jokes"]
-  num = 1
-  Jokes = ""
-  if isinstance(jokes, dict):
-    
-      for key in jokes:
-          a = jokes[key]
-          Jokes+=(f"{num}. {a}\n\n")
-          num+=1
-      print(Jokes)
-
-  else:
-      print(jokes["joke"])
   ```
 
   results of print
   ```python
+  This will print only One Joke
 
-  1. Two fish in a tank. One turns to the other and says, "Do you know how to drive this thing?"
+My ex had an accident. I told the paramedics the wrong blood type for her. She'll finally experience what rejection is really like.
+
+  This will print only 3 Joke
+
+  1. Being a self-taught developer is almost the same as being a cut neck chicken because you have no sense of direction in the beginning.
+
+  2. Four engineers get into a car. The car won't start.
+  The Mechanical engineer says "It's a broken starter".
+  The Electrical engineer says "Dead battery".
+  The Chemical engineer says "Impurities in the gasoline".
+  The IT engineer says "Hey guys, I have an idea: How about we all get out of the car and get back in".
+
+  3. I've got a really good UDP joke to tell you but I don’t know if you'll get it.
 
   ```
 
