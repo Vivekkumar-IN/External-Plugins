@@ -330,6 +330,29 @@ raise InvalidAmountError(amount)
 </details>
 
 <details>
+  <summary>Word</summary>
+
+
+  ```python
+
+  from TheApi import api
+
+  word = api.randomword()
+
+  print(word)
+  ```
+
+  Result of print(word):
+
+  ```python
+  teroxide
+
+  ```
+</details>
+
+
+
+<details>
   <summary>Write</summary>
 
 
