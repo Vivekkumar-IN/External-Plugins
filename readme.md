@@ -2,13 +2,11 @@
 > This is for my personal use if you want yo use so you can
 
 
-<details>
-  <summary>Installation</summary>
+##### Installation
 
 ```sh
 pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 ```
-</details>
 
 <details>
   <summary>Advice</summary>
