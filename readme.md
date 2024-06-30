@@ -135,6 +135,26 @@ Hashtags:
   ```
 </details>
 
+<details>
+  <summary>Imagine</summary>
+
+
+  ```python
+  from TheApi import api
+
+  image = api.imagine("A Litte Boy Walking in roadside")
+
+  print(image)
+
+  ```
+  Result of print(image):
+
+  ```python
+
+  https://telegra.ph/file/057191058512f73cf5ed7.jpg
+  ```
+</details>
+
 
 <details>
 <summary>Jokes</summary>
