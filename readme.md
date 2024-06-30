@@ -33,6 +33,28 @@ If you are feeling down, try holding a pencil between your top lip and your nose
   ```
 </details>
 
+<details>
+  <summary>Cat</summary>
+
+
+  ```python
+
+  from TheApi import api
+
+  image = api.cat()
+  
+  print(advice)
+
+  ```
+
+  Result of print(image):
+
+  ```python
+  
+https://cdn2.thecatapi.com/images/1sk.jpg
+  ```
+</details>
+
 
 <details>
   <summary>ChatGpt</summary>
@@ -55,7 +77,29 @@ If you are feeling down, try holding a pencil between your top lip and your nose
 </details>
  
 
+
+<details>
+  <summary>Dog</summary>
+
+
+  ```python
+
+  from TheApi import api
+
+  image = api.dog()
+  
+  print(advice)
+
+  ```
+
+  Result of print(image):
+
+  ```python
+  
+https://random.dog/1f1d51c0-cdf7-4efb-8ae0-ecd7d6f73481.jpeg
+  ```
 </details>
+
 
 <details>
   <summary>GitHub search</summary>
