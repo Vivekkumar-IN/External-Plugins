@@ -17,6 +17,27 @@ class TheApi:
         pass
 
     def quote(self):
+        """
+        Fetches a random quote from an API and returns it along with the author.
+
+        Returns:
+        str: A formatted string containing the quote and its author.
+
+        EXAMPLE:
+
+        ```python
+        from TheApi import api
+        
+        quote = api.quote()
+       
+        print(quote)
+
+   
+        Results
+        
+        Beware lest you lose the substance by grasping at the shadow.
+        author - Aesop
+        """
         qut = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x61\x70\x69\x2e\x71\x75\x6f\x74\x61\x62\x6c\x65\x2e\x69\x6f\x2f\x72\x61\x6e\x64\x6f\x6d"
         a = requests.get(qut)
         b = a.json()
@@ -378,6 +399,23 @@ class TheApi:
         r = requests.get("https://random.dog/woof.json")
         if r.status_code == 200:
             return r.json()["url"]
+
+    def help(self, method_name):
+        """
+        Retrieves the help documentation for a given method.
+
+        Args:
+        method_name (str): The name of the method to retrieve help for.
+
+        Returns:
+        str: The help documentation for the specified method.
+        """
+        method = getattr(self, method_name, None)
+        if method and callable(method):
+            docstring = method.__doc__
+            return docstring.strip() if docstring else f"No help available for method '{method_name}'."
+        else:
+            return f"Method '{method_name}' not found."
 
 
 api = TheApi()
