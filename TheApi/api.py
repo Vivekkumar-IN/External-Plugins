@@ -279,21 +279,21 @@ class TheApi:
             list: A list of search results or an error message.
 
         Examples:
-            repositories = github_search("machine learning", search_type="repositories")
+            repositories = api.github_search("machine learning", api.search_type="repositories")
 
-            users = github_search("torvalds", search_type="users")
+            users = api.github_search("torvalds", search_type="users")
 
-            organization = github_search("github", search_type="organizations")
+            organization = api.github_search("github", search_type="organizations")
 
-            issues = github_search("bug fix", search_type="issues")
+            issues = api.github_search("bug fix", search_type="issues")
 
-            pull_requests = github_search("new feature", search_type="pull_requests")
+            pull_requests = api.github_search("new feature", search_type="pull_requests")
 
-            commits = github_search("initial commit", search_type="commits")
+            commits = api.github_search("initial commit", search_type="commits")
 
-            labels = github_search("enhancement", search_type="labels")
+            labels = api.github_search("enhancement", search_type="labels")
 
-            topics = github_search("python", search_type="topics")
+            topics = api.github_search("python", search_type="topics")
         """
         valid_search_types = [
             "repositories",
