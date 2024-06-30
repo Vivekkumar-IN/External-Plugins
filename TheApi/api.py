@@ -23,7 +23,7 @@ class TheApi:
         b = a.json()
         quote = b["content"]
         author = b["author"]
-        return f"{quote}\n\n ~~ {author}"
+        return f"{quote}\n\nauthor - {author}"
 
     def randomword(self):
         url = f"https://random-word-api.herokuapp.com/word?number=1"
