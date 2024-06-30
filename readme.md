@@ -306,6 +306,30 @@ raise InvalidAmountError(amount)
 
    ```
 </details>
+
+<details>
+  <summary>Useless Fact</summary>
+
+
+  ```python
+
+  from TheApi import api
+
+  fact = api.get_uselessfact()
+
+  print(fact)
+  ```
+
+  Result of print(word):
+
+  ```python
+  
+In Aspen Colorado, you can have a maximum income of $104,000 and still receive government subsidized housing.
+
+  ```
+</details>
+
+
 <details>
   <summary>Wikipedia</summary>
 
