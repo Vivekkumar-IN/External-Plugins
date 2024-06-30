@@ -189,6 +189,8 @@ Hashtags:
 
   jokes = api.get_jokes(3) # You can get jokes up to 10 make sure the amount of jokes is minimum 1 and maximum 10
 
+  print(jokes)
+
   ```
 
   results of print
