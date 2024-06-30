@@ -126,25 +126,24 @@ class TheApi:
         except requests.exceptions.RequestException as e:
             return e
 
-    def get_jokes(self, amount=1):
+    def get_jokes(self, amount):
+        if not isinstance(amount, int):
+            raise ValueError("The amount must be an integer.")
+
         if amount > 10 or amount < 1:
             raise InvalidAmountError(amount)
+
         response = requests.get(
-            f"https://v2.jokeapi.dev/joke/Any?type=single&amount={amount}"
+        f"https://v2.jokeapi.dev/joke/Any?type=single&amount={amount}"
         )
         jokes_data = response.json()
 
         if amount == 1:
-            jokes = {"jokes": {"joke": jokes_data["joke"]}}
+            return jokes_data["joke"]
         else:
-            jokes = {
-                "jokes": {
-                    f"joke{i+1}": joke["joke"]
-                    for i, joke in enumerate(jokes_data["jokes"])
-                }
-            }
-
-        return json.dumps(jokes)
+            jokes = [joke["joke"] for joke in jokes_data["jokes"]]
+            formatted_jokes = "\n\n".join(f"{i+1}. {joke}" for i, joke in enumerate(jokes))
+            return formatted_jokes
 
     def get_hindi_jokes(self):
         JOKE_API_ENDPOINT = "https://hindi-jokes-api.onrender.com/jokes?api_key=93eeccc9d663115eba73839b3cd9"
