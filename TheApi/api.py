@@ -1,5 +1,4 @@
 import os
-import json
 import requests
 from io import BytesIO
 from bs4 import BeautifulSoup
@@ -134,7 +133,7 @@ class TheApi:
             raise InvalidAmountError(amount)
 
         response = requests.get(
-        f"https://v2.jokeapi.dev/joke/Any?type=single&amount={amount}"
+            f"https://v2.jokeapi.dev/joke/Any?type=single&amount={amount}"
         )
         jokes_data = response.json()
 
@@ -142,7 +141,9 @@ class TheApi:
             return jokes_data["joke"]
         else:
             jokes = [joke["joke"] for joke in jokes_data["jokes"]]
-            formatted_jokes = "\n\n".join(f"{i+1}. {joke}" for i, joke in enumerate(jokes))
+            formatted_jokes = "\n\n".join(
+                f"{i+1}. {joke}" for i, joke in enumerate(jokes)
+            )
             return formatted_jokes
 
     def get_hindi_jokes(self):
