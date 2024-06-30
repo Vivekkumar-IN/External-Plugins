@@ -28,7 +28,7 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 
   ```python
   
-{'results': 'If you are feeling down, try holding a pencil between your top lip and your nose for five minutes.', 'join': '@TheTeamVivek', 'success': True}
+If you are feeling down, try holding a pencil between your top lip and your nose for five minutes.
 
   ```
 </details>
@@ -49,7 +49,7 @@ pip install git+https://github.com/Vivekkumar-IN/TheApi@main
 
   ```python
 
-  {'results': 'Hello! How can I assist you today?', 'join': '@vk_zone', 'success': True}
+  Hello! How can I assist you today?
   ```
 
 </details>
@@ -277,8 +277,8 @@ raise InvalidAmountError(amount)
 
   ```python
 
-
-  {'quote': 'The truest greatness lies in being kind, the truest wisdom in a happy mind.', 'author': 'Ella Wheeler Wilcox', 'join': '@vk_zone'}
+  The truest greatness lies in being kind, the truest wisdom in a happy mind. 
+  author - Ella Wheeler Wilcox
 
   ```
 </details>
@@ -302,7 +302,7 @@ raise InvalidAmountError(amount)
 
   ```python
 
-  {'results': 'https://telegra.ph/A-Title-for-telegraph-page-05-25', 'join': '@vk_zone', 'success': True}
+  https://telegra.ph/A-Title-for-telegraph-page-05-25
 
    ```
 </details>
@@ -331,6 +331,29 @@ raise InvalidAmountError(amount)
 
 <details>
   <summary>Word</summary>
+
+
+  ```python
+
+  from TheApi import api
+
+  word = api.words(5)
+
+  print(word)
+  ```
+
+  Result of print(word):
+
+  ```python
+  ['micropublishers', 'nonlife', 'pollutes', 'fedexed', 'cissy']
+
+  ```
+</details>
+
+
+
+<details>
+  <summary>Random Word</summary>
 
 
   ```python
