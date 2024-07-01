@@ -48,25 +48,25 @@ class TheApi:
     def hindi_quote(self):
         """Get a random hindi quote from
 
-        Returns:
-        str: A formatted string containing the hindi quote .
+                Returns:
+                str: A formatted string containing the hindi quote .
 
-        EXAMPLE:
+                EXAMPLE:
 
-        from TheApi import api
+                from TheApi import api
 
-        quote = api.hindi_quote()
+                quote = api.hindi_quote()
 
-        print(quote)
+                print(quote)
 
 
-        Results
+                Results
 
-        
-माता-पिता जानते हैं कि, वो रह तो रहे हैं बेटों के घर में मगर वैसे नहीं जैसे बेटे रहते थे उनके घर में!"""
+
+        माता-पिता जानते हैं कि, वो रह तो रहे हैं बेटों के घर में मगर वैसे नहीं जैसे बेटे रहते थे उनके घर में!
+        """
         response = requests.get("https://hindi-quotes.vercel.app/random")
-        return response.json()['quote']
-
+        return response.json()["quote"]
 
     def randomword(self):
         url = f"https://random-word-api.herokuapp.com/word?number=1"
