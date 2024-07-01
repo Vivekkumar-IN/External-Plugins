@@ -98,6 +98,28 @@ https://random.dog/1f1d51c0-cdf7-4efb-8ae0-ecd7d6f73481.jpeg
   ```
 </details>
 
+<details>
+  <summary>Fox</summary>
+
+
+  ```python
+
+  from TheApi import api
+
+  image = api.fox()
+  
+  print(image)
+
+  ```
+
+  Result of print(image):
+
+  ```python
+  
+https://randomfox.ca/?i=105
+  ```
+</details>
+
 
 <details>
   <summary>GitHub search</summary>
