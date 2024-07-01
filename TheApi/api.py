@@ -514,7 +514,7 @@ class TheApi:
     def fox(self):
         return requests.get("https://randomfox.ca/floof/").json()["link"]
 
-    def bing_image(photo_name: str, limit: int = 20) -> List[str]:
+    def bing_image(self, photo_name: str, limit: int = 20) -> List[str]:
         """
         Fetch Bing image links based on the photo name and limit.
 
