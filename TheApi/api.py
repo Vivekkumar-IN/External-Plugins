@@ -177,7 +177,7 @@ class TheApi:
             raise ValueError("The amount must be an integer.")
 
         if amount > 10 or amount < 1:
-            raise InvalidAmountError(amount, method="jokes", max="10")
+            raise InvalidAmountError(amount,method="jokes", max="10")
 
         response = requests.get(
             f"https://v2.jokeapi.dev/joke/Any?type=single&amount={amount}"
@@ -525,6 +525,8 @@ class TheApi:
         Returns:
             List[str]: A list of image URLs.
         """
+        if limit > 35 or limit < 1:
+            raise InvalidAmountError(limit,method="image", max="35")
 
         data = {
             "q": photo_name,
