@@ -236,6 +236,27 @@ My ex had an accident. I told the paramedics the wrong blood type for her. She'l
   ```
 </details>
 
+<details>
+  <summary>Meme</summary>
+
+
+  ```python
+  from TheApi import api
+
+  meme = api.meme()
+
+  print(meme)
+
+  ```
+  Result of print(meme):
+
+  ```python
+
+  
+https://preview.redd.it/0x81277rzd9d1.gif?width=320&crop=smart&format=png8&s=d3128d6587307a6fa1590cd83254467e0592d4fd
+  ```
+</details>
+
 
 <details>
   <summary>Morse</summary>
