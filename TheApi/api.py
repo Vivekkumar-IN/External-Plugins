@@ -86,7 +86,7 @@ class TheApi:
         font_response = requests.get(font_url)
         font = ImageFont.truetype(BytesIO(font_response.content), 24)
 
-        x, y = 150, 140.
+        x, y = 150, 140.0
         lines = []
         if len(text) <= 55:
             lines.append(text)
