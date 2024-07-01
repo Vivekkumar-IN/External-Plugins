@@ -481,10 +481,9 @@ class TheApi:
         else:
             return None
 
-
     def meme(self):
         hu = requests.get("https://meme-api.com/gimme").json()
-        return hu['preview'][-1]
+        return hu["preview"][-1]
 
 
 api = TheApi()
