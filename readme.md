@@ -31,6 +31,32 @@ If you are feeling down, try holding a pencil between your top lip and your nose
   ```
 </details>
 
+
+
+<details>
+  <summary>Bing Image</summary>
+
+
+  ```python
+
+  from TheApi import api 
+
+  image = api.bing_image("pokemon",5)
+
+  print(image)
+
+  ```
+
+  Result of print(image):
+
+  ```python
+  
+
+['http://clipart-library.com/images_k/pokemon-transparent-background/pokemon-transparent-background-25.png', 'https://wallpapercave.com/wp/wp3257098.jpg', 'https://i0.wp.com/www.animextremist.com/imagenes/pokemon/pokemon97.jpg', 'https://blog.looglebiz.com/wp-content/uploads/2022/10/og-default-image.jpeg', 'https://i.pinimg.com/originals/a9/13/3b/a9133be45040e30406036a78d479bd36.png']
+
+  ```
+</details>
+
 <details>
   <summary>Cat</summary>
 
