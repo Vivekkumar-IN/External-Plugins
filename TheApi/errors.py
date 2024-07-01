@@ -1,5 +1,5 @@
 class InvalidAmountError(Exception):
-    def __init__(self, amount):
+    def __init__(self, amount, method, max):
         super().__init__(
-            f"Invalid amount of jokes requested: {amount}. Maximum allowed is 10. Minimum allowed is 1."
+            f"Invalid amount of {method} requested: {amount}. Maximum allowed is {max} Minimum allowed is 1."
         )
