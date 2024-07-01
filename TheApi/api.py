@@ -521,7 +521,6 @@ class TheApi:
         Parameters:
             photo_name (str): The search query for the image.
             limit (int): The maximum number of image links to return.
-            verify (bool): If True, verify the image content; if False, do not verify.
 
         Returns:
             List[str]: A list of image URLs.
