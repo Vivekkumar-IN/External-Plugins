@@ -73,7 +73,7 @@ class TheApi:
         response = requests.get(url)
 
         if response.status_code == 200:
-            return response.json()
+            return response.json()[0]
         else:
             return "None"
 
@@ -86,7 +86,7 @@ class TheApi:
         font_response = requests.get(font_url)
         font = ImageFont.truetype(BytesIO(font_response.content), 24)
 
-        x, y = 150, 140
+        x, y = 150, 140.
         lines = []
         if len(text) <= 55:
             lines.append(text)
