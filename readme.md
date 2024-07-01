@@ -330,7 +330,7 @@ https://preview.redd.it/0x81277rzd9d1.gif?width=320&crop=smart&format=png8&s=d31
 
 
 <details>
-  <summary>Random quote</summary> 
+  <summary>Quote</summary> 
 
   ```python
   from TheApi import api
@@ -351,6 +351,27 @@ https://preview.redd.it/0x81277rzd9d1.gif?width=320&crop=smart&format=png8&s=d31
   ```
 </details>
 
+<details>
+  <summary>Hindi Quote</summary> 
+
+  ```python
+  from TheApi import api
+
+  results= api.hindi_quote()
+
+  print(results)
+
+  ```
+
+  Result of print(results):
+
+  ```python
+
+  
+खुद में झांकने के लिए जिगर चाहिए, दुसरों की शिनाख्त में तो हर शख्स माहिर होता है।
+
+  ```
+</details>
 
 
 
