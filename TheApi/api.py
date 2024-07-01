@@ -1,3 +1,6 @@
+import re
+from typing import List
+import imghdr
 import os
 import inspect
 import requests
@@ -7,6 +10,8 @@ from PIL import Image, ImageDraw, ImageFont
 from telegraph import upload_file, Telegraph
 from .errors import InvalidAmountError
 from .functions import MORSE_CODE_DICT
+
+
 
 telegraph = Telegraph()
 
@@ -510,6 +515,42 @@ class TheApi:
 
     def fox(self):
         return requests.get("https://randomfox.ca/floof/").json()["link"]
+
+
+
+    def bing_image(photo_name: str, limit: int = 20) -> List[str]:
+        """
+    Fetch Bing image links based on the photo name and limit.
+
+    Parameters:
+        photo_name (str): The search query for the image.
+        limit (int): The maximum number of image links to return.
+        verify (bool): If True, verify the image content; if False, do not verify.
+
+    Returns:
+        List[str]: A list of image URLs.
+        """
+    
+        data = {
+        "q": photo_name,
+        "first": 0,
+        "count": limit,
+        "adlt": "off",
+        "qft": "",
+        }
+
+        url = "https://www.bing.com/images/async"
+        try:
+            resp = requests.get(url, params=data)
+            resp.raise_for_status()
+        except Exception as exc:
+            raise
+        try:
+            links = re.findall(r"murl&quot;:&quot;(.*?)&quot;", resp.text)
+        except Exception as exc:
+            raise
+ 
+        return links
 
 
 api = TheApi()
