@@ -302,7 +302,6 @@ class TheApi:
             "issues",
             "pull_requests",
             "commits",
-            "labels",
             "topics",
         ]
 
@@ -314,7 +313,6 @@ class TheApi:
         url_mapping = {
             "pull_requests": "https://api.github.com/search/issues",
             "organizations": "https://api.github.com/search/users",
-            "labels": "https://api.github.com/search/labels",
             "topics": "https://api.github.com/search/topics",
         }
 
@@ -387,13 +385,6 @@ class TheApi:
                         "author": item["commit"]["author"]["name"],
                         "date": item["commit"]["author"]["date"],
                         "url": item["html_url"],
-                    }
-                elif search_type == "labels":
-                    item_info = {
-                        "name": item["name"],
-                        "color": item["color"],
-                        "description": item.get("description"),
-                        "url": item.get("url"),
                     }
                 elif search_type == "topics":
                     item_info = {
