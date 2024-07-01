@@ -509,7 +509,7 @@ class TheApi:
         return hu["preview"][-1]
 
     def fox(self):
-        return requests.get("https://randomfox.ca/floof/").json()['link']
+        return requests.get("https://randomfox.ca/floof/").json()["link"]
 
 
 api = TheApi()
