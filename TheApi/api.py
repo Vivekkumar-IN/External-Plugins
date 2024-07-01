@@ -508,5 +508,8 @@ class TheApi:
         hu = requests.get("https://meme-api.com/gimme").json()
         return hu["preview"][-1]
 
+    def fox(self):
+        return requests.get("https://randomfox.ca/floof/").json()['link']
+
 
 api = TheApi()
